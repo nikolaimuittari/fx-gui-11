@@ -1,0 +1,41 @@
+# For more details on the format and content:
+# https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-robotyaml
+
+tasks:
+  # Task names here are used when executing the bots, so renaming these is recommended.
+  Login Features:
+    shell: python -m robot --report NONE --outputdir output --log "log_login.html" --logtitle "Login log" robots\\login.robot
+
+  Navigation Features:
+    shell: python -m robot --report NONE --outputdir output --log "log_navigation.html" --logtitle "Navigation log" robots\\navigation.robot
+
+  Activations Features:
+    shell: python -m robot --report NONE --outputdir output --log "log_activations.html" --logtitle "Activations log" robots\\activations.robot
+  
+  Logs Features:
+    shell: python -m robot --report NONE --outputdir output --log "log_logs.html" --logtitle "Logs log" robots\\logs.robot
+
+  Automation Features:
+    shell: python -m robot --report NONE --outputdir output --log "log_automation.html" --logtitle "Automation log" robots\\automation.robot
+
+  Settings Features:
+    shell: python -m robot --report NONE --outputdir output --log "log_settings.html" --logtitle "Settings log" robots\\settings.robot
+
+  History Features:
+    shell: python -m robot --report NONE --outputdir output --log "log_history.html" --logtitle "History log" robots\\history.robot
+
+
+environmentConfigs:
+  - environment_windows_amd64_freeze.yaml
+  - environment_linux_amd64_freeze.yaml
+  - environment_darwin_amd64_freeze.yaml
+  - conda.yaml
+
+artifactsDir: output  
+
+PATH:
+  - .
+PYTHONPATH:
+  - .
+ignoreFiles:
+  - .gitignore
