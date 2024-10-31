@@ -1,0 +1,10 @@
+{"level":30,"time":"2024-10-31T06:02:38.731Z","pid":20380,"hostname":"LT-PW014SWR","msg":"Listening on 53724"}
+{"level":30,"time":"2024-10-31T06:02:38.892Z","pid":20380,"hostname":"LT-PW014SWR","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-10-31T06:02:38.893Z","pid":20380,"hostname":"LT-PW014SWR","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-10-31T06:02:38.925Z","pid":20380,"hostname":"LT-PW014SWR","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2024-10-31T06:02:40.261Z","pid":20380,"hostname":"LT-PW014SWR","msg":"End of node method newBrowser"}
+{"level":30,"time":"2024-10-31T06:02:40.285Z","pid":20380,"hostname":"LT-PW014SWR","msg":"Start of node method newContext"}
+{"level":30,"time":"2024-10-31T06:02:40.286Z","pid":20380,"hostname":"LT-PW014SWR","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-10-31T06:02:40.286Z","pid":20380,"hostname":"LT-PW014SWR","msg":"Trace file: "}
+{"level":30,"time":"2024-10-31T06:02:40.303Z","pid":20380,"hostname":"LT-PW014SWR","msg":"Changed active context"}
+{"level":30,"time":"2024-10-31T06:02:40.304Z","pid":20380,"hostname":"LT-PW014SWR","msg":"End of node method newContext"}
