@@ -8,9 +8,12 @@ Test Setup      Go to main view
 
 *** Test Cases ***
 Logs page Features Walkthrough
-    Events Log Features    system    MBUS_50015147_COMM_ALM
+    [Documentation]
+    ...    Navigating to each log, searching for username and pointname
+
+    Events Log Features    username=system    point_name=MBUS_50015147_COMM_ALM
     Debug Log Features
-    Alarm Log Features    system    MBUS_50015147_COMM_ALM
+    Alarm Log Features    username=system    point_name=MBUS_50015147_COMM_ALM
 
 
 *** Keywords ***

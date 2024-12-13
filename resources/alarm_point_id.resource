@@ -11,9 +11,6 @@ Resource    automation_locators_id.resource
 Add New Alarm Point
     [Arguments]    ${point_name}    ${alarm_type}    ${port}    ${module}    ${point}
 
-    # Go to automation
-    # Go to automation alarm points
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}
 
@@ -31,8 +28,6 @@ Add New Alarm Point
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_GLOBAL_BUTTON}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}    visible    timeout=2s
-    # ${rnd_substation}=    Generate Random String    3    [UPPER]
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}    VAK_${rnd_substation}
 
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}
     ${substation_option_2}=    Set Variable
@@ -52,35 +47,6 @@ Add New Alarm Point
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_LOCAL_BUTTON}
 
     Module Selector    ${port}    ${module}    ${point}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    ${port}
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    ${module}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}    visible    timeout=2s
-    # Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
-    # # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW1}    visible    timeout=2s
-    # ${module_table_visible}=    Run Keyword And Return Status    Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW1}    visible    timeout=2s
-    # IF    ${module_table_visible}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW1}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW2}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW3}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW4}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW5}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW6}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW7}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW8}
-
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CANCEL_BUTTON}
-    # ELSE
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CANCEL_BUTTON}
-    # END
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    ${point}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}

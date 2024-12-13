@@ -86,7 +86,8 @@ Test network settings navigations
     Go to network firewall settings    page-settings-network-firewall
     Go to network nat settings    page-settings-network-nat
     Go to network alarm email settings    page-settings-network-alarm-email
-    Go to network history settings    page-settings-network-history
+    # Settings History does not exist anymore (20.0.83)
+    # Go to network history settings    page-settings-network-history
     Go to network tosibox settings    page-settings-network-tosibox
 
 Test users settings navigations
@@ -98,7 +99,7 @@ Test users settings navigations
 *** Keywords ***
 Take Screenshot With Wait
     [Arguments]    ${screenshotname}
-    Wait Until Network Is Idle
+    Browser.Wait For Load State
     Wait until loading spinner is gone
     Take Screenshot    filename=${screenshotname}
 

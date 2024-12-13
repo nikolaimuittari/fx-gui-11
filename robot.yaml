@@ -3,8 +3,21 @@
 
 tasks:
   # Task names here are used when executing the bots, so renaming these is recommended.
+
+  Run-All-Tasks:
+    shell: robots\\all_tasks.bat
+
   Settings-System-Device:
     shell: python -m robot --report NONE --outputdir output --log "log_settings_system_device.html" --logtitle "Settings-System-Device log" robots\\settings_system_device.robot
+
+  Settings System Status:
+    shell: python -m robot --report NONE --outputdir output --log "log_settings_system_status.html" --logtitle "Settings-System-Status log" robots\\settings_system_status.robot
+
+  SFTP stress tests:
+    shell: python -m robot --report NONE --outputdir output --log "sftp_stress_tests.html" --logtitle "SFTP stress tests log" robots\\sftp_stress_tests.robot
+
+  DST transition:
+    shell: python -m robot --report NONE --outputdir output --log "log_dst.html" --logtitle "DST log" robots\\dettings_dst_test.robot
 
   Login Features:
     shell: python -m robot --report NONE --outputdir output --log "log_login.html" --logtitle "Login log" robots\\login.robot

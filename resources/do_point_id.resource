@@ -1,7 +1,6 @@
 *** Settings ***
 Library     Browser
 Library     RPA.JavaAccessBridge
-# Library    RPA.Desktop
 Resource    navigate.resource
 Resource    login.resource
 Resource    point_locators.resource
@@ -26,8 +25,6 @@ Add New DO Point
     ...    ${GLOBAL_SUBSTATION_NAME}
     ...    ${GLOBAL_POINT_NAME}
 
-    # Go to automation
-    # Go to automation do points
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}
@@ -60,46 +57,6 @@ Add New DO Point
 
     Module Selector    ${MODULE_PORT_INPUT_VALUE}    ${MODULE_NUMBER_INPUT_VALUE}    ${MODULE_POINT_VALUE}
 
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    ${MODULE_PORT_INPUT_VALUE}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    ${MODULE_NUMBER_INPUT_VALUE}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}    visible    timeout=2s
-    # Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
-    # # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW1}    visible    timeout=2s
-    # ${module_table_visible}=    Run Keyword And Return Status    Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW1}    visible    timeout=2s
-    # IF    ${module_table_visible}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW1}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW2}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW3}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW4}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW5}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW6}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW7}
-    #    Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_TABLE1_ROW8}
-    # END
-
-    # # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
-    # # ${module_table_row1}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row1']
-    # # Wait For Elements State    ${module_table_row1}    visible    timeout=2s
-    # # Browser.Click    ${module_table_row1}
-    # # ${module_table_row2}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row2']
-    # # Browser.Click    ${module_table_row2}
-    # # ${module_table_row3}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row3']
-    # # Browser.Click    ${module_table_row3}
-    # # ${module_table_row4}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row4']
-    # # Browser.Click    ${module_table_row4}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CLOSE_ICON}    visible    timeout=2s
-    # Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CLOSE_ICON}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    ${MODULE_POINT_VALUE}
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}
     ${option2}=    Set Variable    xpath=//mat-option[@data-qa-id="automation-point-edit-state-text-option2"]
@@ -124,8 +81,6 @@ Add New DO Point
     IF    ${GLOBAL_POINT} != 0
         Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_GLOBAL_BUTTON}    visible    timeout=2s
         Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_GLOBAL_BUTTON}
-        # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_POINTNAME_INPUT}    visible    timeout=5s
-        # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}    visible    timeout=5s
         ${option2}=    Set Variable
         ...    xpath=//mat-option[@data-qa-id='automation-point-edit-global-info-substation-option2']
         ${option2_visible}=    Run Keyword And Return Status
@@ -153,11 +108,7 @@ Delete DO Point
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
 
-    # Go to automation
-    # Go to automation do points
-
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${POINT_ID_INPUT_VALUE}')]
-    # ${compiled_text}=    Set Variable    //td[.//div[@class='point-name ng-star-inserted' and text()=" ${POINT_ID_INPUT_VALUE} "]]
 
     Wait For Elements State    ${compiled_text}    visible    timeout=2s
     Browser.Click    ${compiled_text}
@@ -178,11 +129,7 @@ Duplicate DO Point
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_NEW_NAME}
 
-    # Go to automation
-    # Go to automation do points
-
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${POINT_ID_INPUT_VALUE}')]
-    # ${compiled_text}=    Set Variable    //td[.//div[@class='point-name ng-star-inserted' and text()=" ${POINT_ID_INPUT_VALUE} "]]
 
     Wait For Elements State    ${compiled_text}    visible    timeout=2s
     Browser.Click    ${compiled_text}
@@ -212,16 +159,11 @@ Duplicate DO Point
     Snack-bar Visibility And Content
     Go to automation do points
 
-    # ${compiled_text}=    Set Variable    xpath=//td[contains(text(), "${POINT_DESCRIPTION_INPUT_VALUE}")]
-    # ${xpath_variable}=    Set Variable    //div[@class='point-name-container']//div[contains(text(),"${POINT_NEW_NAME}")]
-    # ${xpath_variable}=    Set Variable    //div[@class='point-name ng-star-inserted' and contains(text(), "${POINT_NEW_NAME}")]
     ${xpath_variable}=    Set Variable    xpath=//td[contains(., '${POINT_NEW_NAME}')]
 
     Wait For Elements State    ${xpath_variable}    visible    timeout=2s
 
 Print DO Pointlist
-    # Go to automation
-    # Go to automation do points
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}
@@ -247,12 +189,6 @@ Edit DO Point
     ...    ${GLOBAL_SUBSTATION_NAME}
     ...    ${GLOBAL_POINT_NAME}
 
-    # Go to automation
-    # Go to automation do points
-
-    # ${compiled_text}=    Set Variable    xpath=//td[contains(text(), "${POINT_DESCRIPTION_INPUT_VALUE}")]
-    # ${compiled_text}=    Set Variable    //div[@class='point-name ng-star-inserted' and contains(text(), "${POINT_ID_INPUT_VALUE}")]
-    # ${compiled_text}=    Set Variable    //td[.//div[@class='point-name ng-star-inserted' and text()=" ${POINT_ID_INPUT_VALUE} "]]
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${POINT_ID_INPUT_VALUE}')]
 
     Wait For Elements State    ${compiled_text}    visible    timeout=2s
@@ -299,32 +235,6 @@ Edit DO Point
 
     Module Selector    ${MODULE_PORT_INPUT_VALUE}    ${MODULE_NUMBER_INPUT_VALUE}    ${MODULE_POINT_VALUE}
 
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    ${MODULE_PORT_INPUT_VALUE}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    ${MODULE_NUMBER_INPUT_VALUE}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}    visible    timeout=2s
-    # Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}
-
-    # # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
-    # # ${module_table_row1}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row1']
-    # # Wait For Elements State    ${module_table_row1}    visible    timeout=2s
-    # # Browser.Click    ${module_table_row1}
-    # # ${module_table_row2}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row2']
-    # # Browser.Click    ${module_table_row2}
-    # # ${module_table_row3}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row3']
-    # # Browser.Click    ${module_table_row3}
-    # # ${module_table_row4}=    Set Variable    xpath=//tr[@data-qa-id='automation-module-view-dialog-table${MODULE_NUMBER_INPUT_VALUE}-row4']
-    # # Browser.Click    ${module_table_row4}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CLOSE_ICON}    visible    timeout=2s
-    # Browser.Click    ${SELECTOR_AUTOMATION_MODULE_VIEW_DIALOG_CLOSE_ICON}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    ${MODULE_POINT_VALUE}
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}
     ${option2}=    Set Variable    xpath=//mat-option[@data-qa-id="automation-point-edit-state-text-option2"]
@@ -349,8 +259,6 @@ Edit DO Point
     IF    ${GLOBAL_POINT} != 0
         Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_GLOBAL_BUTTON}    visible    timeout=2s
         Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_GLOBAL_BUTTON}
-        # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_POINTNAME_INPUT}    visible    timeout=5s
-        # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}    visible    timeout=5s
         ${option2}=    Set Variable
         ...    xpath=//mat-option[@data-qa-id='automation-point-edit-global-info-substation-option2']
         ${option2_visible}=    Run Keyword And Return Status

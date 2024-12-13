@@ -29,7 +29,7 @@ ${selector_navbar_reports}                          xpath=//a[@routerlink='/main
 
 # We use these to validate page is loaded
 ${selector_dashboard_visible}                       xpath=//mat-icon[@title='Open dashboard settings']
-${selector_processes_visible}                       xpath=//div[@class='process_toolbar_title'] | //div[@id='process_empty_info']
+${selector_processes_visible}                       xpath=//div[contains(@class, "content_toolbar")]    # xpath=//div[@class='process_toolbar_title'] | //div[@id='process_empty_info']
 ${selector_automation_visible}                      xpath=//div[@class='automation-toolbar-header'] | //div[@class='automation-menu']
 ${selector_history_visible}                         xpath=//div[@id="history-toolbar"]
 ${selector_logs_visible}                            xpath=//div[@class='event_details_container ng-star-inserted']
@@ -71,10 +71,17 @@ ${selector_logs_debugs}                             xpath=//div[@class='event_ty
 
 # Settings sub pages
 # TODO: Many these fails with other language. We need better identifiers in code.
-${selector_settings_dashboard}                      xpath=//app-settings-top-menu//div[text()='Dashboard']
-${selector_settings_system}                         xpath=//app-settings-top-menu//div[text()='System settings']
-${selector_settings_network}                        xpath=//app-settings-top-menu//div[text()='Network settings']
-${selector_settings_user}                           xpath=//app-settings-top-menu//div[text()='User settings']
+# New selectors created with "data-qa-id" attribute
+
+# ${selector_settings_dashboard}                      xpath=//app-settings-top-menu//div[text()='Dashboard']
+# ${selector_settings_system}                         xpath=//app-settings-top-menu//div[text()='System settings']
+# ${selector_settings_network}                        xpath=//app-settings-top-menu//div[text()='Network settings']
+# ${selector_settings_user}                           xpath=//app-settings-top-menu//div[text()='User settings']
+
+${selector_settings_dashboard}                      xpath=//div[@data-qa-id='settings-top-menu-dashboard']
+${selector_settings_system}                         xpath=//div[@data-qa-id='settings-top-menu-system']
+${selector_settings_network}                        xpath=//div[@data-qa-id='settings-top-menu-network']
+${selector_settings_user}                           xpath=//div[@data-qa-id='settings-top-menu-user']
 
 ${selector_settings_system_device}                  xpath=//div[@class='item_title' and contains(normalize-space(text()), 'Device settings')]
 ${selector_settings_system_status}                  xpath=//div[@class='item_title' and contains(normalize-space(text()), 'System status')]
@@ -160,7 +167,7 @@ Go to main view
     # TODO: Sometimes when we Browser.Click links too fast we do not get correct
     # page without these. This is some bug in UI. We might get other bugs
     # when we finally remove these.
-    Run Keyword And Ignore Error    Wait Until Network Is Idle
+    Run Keyword And Ignore Error    Wait For Load State
     Wait For Elements State    ${selector_dashboard_visible}    visible
 
     # TODO: Currently only english works as our selectors use text.

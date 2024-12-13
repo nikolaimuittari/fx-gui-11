@@ -51,9 +51,13 @@ Add New Modbus Device
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_SELECT}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_SELECT}
-    Keyboard Key    press    ArrowDown
-    Keyboard Key    press    ArrowDown
-    Keyboard Key    press    Enter
+    
+    Wait For Elements State    ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION4}    visible    timeout=2s
+    Browser.Click    ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION4}
+    # Browser.Click    ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_SELECT}
+    # Keyboard Key    press    ArrowDown
+    # Keyboard Key    press    ArrowDown
+    # Keyboard Key    press    Enter
     # TODO replace end
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_ADDRESS_INPUT}    visible    timeout=2s

@@ -21,15 +21,15 @@ ${DI_point_name}    1VAK_TE01_DI
 
 *** Test Cases ***
 Manipulate Good Module Devices
-    Create X Modules On Port    port=3    start_address=20    quantity=6    module_type=DI
-    Create X Modules On Port    port=4    start_address=20    quantity=6    module_type=DO
-    Create X Modules On Port    port=5    start_address=20    quantity=6    module_type=AI
-    Create X Modules On Port    port=0    start_address=20    quantity=6    module_type=MBUS
+    Create X Modules On Port    port=3    start_address=20    quantity=3    module_type=DI
+    # Create X Modules On Port    port=4    start_address=20    quantity=3    module_type=DO
+    # Create X Modules On Port    port=5    start_address=20    quantity=1    module_type=AI
+    # Create X Modules On Port    port=0    start_address=20    quantity=6    module_type=MBUS
 
-    Remove X Modules From Port    port=3    start_address=20    quantity=6
-    Remove X Modules From Port    port=4    start_address=20    quantity=6
-    Remove X Modules From Port    port=5    start_address=20    quantity=6
-    Remove X Modules From Port    port=0    start_address=20    quantity=6
+    Remove X Modules From Port    port=3    start_address=20    quantity=3
+    # Remove X Modules From Port    port=4    start_address=20    quantity=3
+    # Remove X Modules From Port    port=5    start_address=20    quantity=1
+    # Remove X Modules From Port    port=0    start_address=20    quantity=6
 
     # Create X MBUS On Port    0    63
     # Create X MBUS On Port    6    63

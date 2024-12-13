@@ -120,7 +120,7 @@ ${SELECTOR_SETTINGS_SYSTEM_CLOCK_USE_FX_TIME_SERVER_CHECKBOX}                   
 ${SELECTOR_SETTINGS_SYSTEM_CLOCK_USE_GSM_TIME_CHECKBOX}                             xpath=//input[@id='settings-system-clock-use-gsm-time-input']
 ${SELECTOR_SETTINGS_SYSTEM_CLOCK_AUTOMATIC_SUMMER_TIME_CHECKBOX}                    xpath=//input[@id='settings-system-clock-time-server-automatic-summer-time-input']
 ${SELECTOR_SETTINGS_SYSTEM_CLOCK_TIME_ZONE_DROPDOWN}                                xpath=//ng-moment-timezone-picker[@data-qa-id='settings-system-clock-timezone']
-# xpath=//select[@data-qa-id="settings-system-clock-time-zone"]
+# xpath=//mat-select[@data-qa-id="settings-system-clock-time-zone"]
 
 ${SELECTOR_SETTINGS_SYSTEM_CLOCK_TIME_ZONE_OPTION1}                                 xpath=//option[@data-qa-id="settings-system-clock-time-zone-option1"]
 ${SELECTOR_SETTINGS_SYSTEM_CLOCK_TIME_ZONE_OPTION2}                                 xpath=//option[@data-qa-id="settings-system-clock-time-zone-option2"]
@@ -150,15 +150,15 @@ ${SELECTOR_SETTINGS_SYSTEM_CLOCK_TIME_ZONE_OPTION25}                            
 
 ${SELECTOR_SETTINGS_CLOCK_LATITUDE_DEGREES_INPUT_INPUT}                             xpath=//input[@data-qa-id="settings-system-clock-astro-latitude-degrees"]
 ${SELECTOR_SETTINGS_CLOCK_LATITUDE_MINUTES_INPUT_INPUT}                             xpath=//input[@data-qa-id="settings-system-clock-astro-latitude-minutes"]
-${SELECTOR_SETTINGS_CLOCK_LATITUDE_DIRECTION_DROPDOWN}                              xpath=//select[@data-qa-id="settings-system-clock-astro-latitude-direction"]
-${SELECTOR_SETTINGS_CLOCK_LATITUDE_DIRECTION_DROPDOWN_OPTION0}                      xpath=//select[@data-qa-id='settings-system-clock-astro-latitude-direction']//option[@value='0' and text()='Northern']
-${SELECTOR_SETTINGS_CLOCK_LATITUDE_DIRECTION_DROPDOWN_OPTION1}                      xpath=//select[@data-qa-id='settings-system-clock-astro-latitude-direction']//option[@value='1' and text()='Southern']
+${SELECTOR_SETTINGS_CLOCK_LATITUDE_DIRECTION_DROPDOWN}                              xpath=//mat-select[@data-qa-id="settings-system-clock-astro-latitude-direction"]
+${SELECTOR_SETTINGS_CLOCK_LATITUDE_DIRECTION_DROPDOWN_OPTION0}                      xpath=//mat-select[@data-qa-id='settings-system-clock-astro-latitude-direction']//option[@value='0' and text()='Northern']
+${SELECTOR_SETTINGS_CLOCK_LATITUDE_DIRECTION_DROPDOWN_OPTION1}                      xpath=//mat-select[@data-qa-id='settings-system-clock-astro-latitude-direction']//option[@value='1' and text()='Southern']
 
 ${SELECTOR_SETTINGS_CLOCK_LONGITUDE_DEGREES_INPUT_INPUT}                            xpath=//input[@data-qa-id="settings-system-clock-astro-longitude-degrees"]
 ${SELECTOR_SETTINGS_CLOCK_LONGITUDE_MINUTES_INPUT_INPUT}                            xpath=//input[@data-qa-id="settings-system-clock-astro-longitude-minutes"]
-${SELECTOR_SETTINGS_CLOCK_LONGITUDE_DIRECTION_DROPDOWN}                             xpath=//select[@data-qa-id="settings-system-clock-astro-longitude-direction"]
-${SELECTOR_SETTINGS_CLOCK_LONGITUDE_DIRECTION_DROPDOWN_OPTION0}                     xpath=//select[@data-qa-id='settings-system-clock-astro-longitude-direction']//option[@value='0' and text()='Easthern']
-${SELECTOR_SETTINGS_CLOCK_LONGITUDE_DIRECTION_DROPDOWN_OPTION1}                     xpath=//select[@data-qa-id='settings-system-clock-astro-longitude-direction']//option[@value='1' and text()='Westhern']
+${SELECTOR_SETTINGS_CLOCK_LONGITUDE_DIRECTION_DROPDOWN}                             xpath=//mat-select[@data-qa-id="settings-system-clock-astro-longitude-direction"]
+${SELECTOR_SETTINGS_CLOCK_LONGITUDE_DIRECTION_DROPDOWN_OPTION0}                     xpath=//mat-select[@data-qa-id='settings-system-clock-astro-longitude-direction']//option[@value='0' and text()='Easthern']
+${SELECTOR_SETTINGS_CLOCK_LONGITUDE_DIRECTION_DROPDOWN_OPTION1}                     xpath=//mat-select[@data-qa-id='settings-system-clock-astro-longitude-direction']//option[@value='1' and text()='Westhern']
 
 ${SELECTOR_SETTINGS_CLOCK_CURRENT_CLOCK_INPUT}                                      xpath=//input[@data-qa-id='settings-system-clock-current-time']
 ${SELECTOR_SETTINGS_CLOCK_CURRENT_DATE_INPUT}                                       xpath=//input[@data-qa-id='settings-system-clock-current-date']
@@ -239,11 +239,11 @@ ${SELECTOR_SETTINGS_SMS_SERVER_HOST_2_INPUT}                                    
 ${SELECTOR_SETTINGS_SMS_SERVER_HOST_3_INPUT}                                        xpath=//input[@data-qa-id="settings-system-sms-web-service-server3"]
 ${SELECTOR_SETTINGS_SMS_SERVER_HOST_4_INPUT}                                        xpath=//input[@data-qa-id="settings-system-sms-web-service-server4"]
 ${SELECTOR_SETTINGS_SMS_ACTIVATION_ID_INPUT}                                        xpath=//input[@data-qa-id="settings-system-sms-activation-id"]
-${SELECTOR_SETTINGS_SMS_SMS_SEND_VALIDITY_TIME_DROPDOWN}                            xpath=//select[@data-qa-id="settings-system-sms-validity-time"]
-${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_1}                                     xpath=//option[@data-qa-id="settings-system-sms-validity-time-option1"]
-${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_2}                                     xpath=//option[@data-qa-id="settings-system-sms-validity-time-option2"]
-${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_3}                                     xpath=//option[@data-qa-id="settings-system-sms-validity-time-option3"]
-${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_4}                                     xpath=//option[@data-qa-id="settings-system-sms-validity-time-option4"]
+${SELECTOR_SETTINGS_SMS_SMS_SEND_VALIDITY_TIME_DROPDOWN}                            xpath=//mat-select[@data-qa-id="settings-system-sms-validity-time"]
+${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_1}                                     xpath=//mat-option[@data-qa-id="settings-system-sms-validity-time-option1"]
+${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_2}                                     xpath=//mat-option[@data-qa-id="settings-system-sms-validity-time-option2"]
+${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_3}                                     xpath=//mat-option[@data-qa-id="settings-system-sms-validity-time-option3"]
+${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_4}                                     xpath=//mat-option[@data-qa-id='settings-system-sms-validity-time-option4']
 ${SELECTOR_SETTINGS_SMS_DEBUG_GSM_MODEM_CHECKBOX}                                   xpath=//input[@id="settings-system-sms-debug-gsm-modem-input"]
 ${SELECTOR_SETTINGS_SMS_CANCEL_BUTTON}                                              xpath=//button[@data-qa-id="settings-system-sms-cancel-button"]
 ${SELECTOR_SETTINGS_SMS_SAVE_BUTTON}                                                xpath=//button[@data-qa-id="settings-system-sms-save-button"]
@@ -389,20 +389,20 @@ ${SELECTOR_SETTINGS_NETWORK_PORTS_MOVE_TO_PORT}                                 
 ${SELECTOR_SETTINGS_NETWORK_PORTS_MOVE_MODULES_BUTTON}                              xpath=//button[@data-qa-id='settings-network-ports-move-modules-button']
 ${SELECTOR_SETTINGS_NETWORK_PORTS_MOVE_MODBUS_BUTTON}                               xpath=//button[@data-qa-id='settings-network-ports-move-modbus-button']
 
-${SELECTOR_SETTINGS_NETWORK_PORTS_FROM_PORT_DROPDOWN}                               xpath=//select[@data-qa-id='settings-network-ports-move-from-port']
-${SELECTOR_SETTINGS_NETWORK_PORTS_TO_PORT_DROPDOWN}                                 xpath=//select[@data-qa-id='settings-network-ports-move-to-port']
+${SELECTOR_SETTINGS_NETWORK_PORTS_FROM_PORT_DROPDOWN}                               xpath=//mat-select[@data-qa-id='settings-network-ports-move-from-port']
+${SELECTOR_SETTINGS_NETWORK_PORTS_TO_PORT_DROPDOWN}                                 xpath=//mat-select[@data-qa-id='settings-network-ports-move-to-port']
 
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_1_IN_FROM_PORT_DROPDOWN}                   xpath=//select[@data-qa-id='settings-network-ports-move-from-port']//option[@data-qa-id='settings-network-ports-move-from-port-option1']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_2_IN_FROM_PORT_DROPDOWN}                   xpath=//select[@data-qa-id='settings-network-ports-move-from-port']//option[@data-qa-id='settings-network-ports-move-from-port-option2']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_3_IN_FROM_PORT_DROPDOWN}                   xpath=//option[@data-qa-id='settings-network-ports-move-from-port-option3']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_4_IN_FROM_PORT_DROPDOWN}                   xpath=//option[@data-qa-id='settings-network-ports-move-from-port-option4']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_5_IN_FROM_PORT_DROPDOWN}                   xpath=//option[@data-qa-id='settings-network-ports-move-from-port-option5']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_6_IN_FROM_PORT_DROPDOWN}                   xpath=//option[@data-qa-id='settings-network-ports-move-from-port-option6']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_7_IN_FROM_PORT_DROPDOWN}                   xpath=//option[@data-qa-id='settings-network-ports-move-from-port-option7']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_8_IN_FROM_PORT_DROPDOWN}                   xpath=//option[@data-qa-id='settings-network-ports-move-from-port-option8']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_1_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option1']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_2_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option2']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_3_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option3']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_4_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option4']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_5_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option5']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_6_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option6']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_7_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option7']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_8_IN_FROM_PORT_DROPDOWN}                   xpath=//mat-option[@data-qa-id='settings-network-ports-move-from-port-option8']
 
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_1_TO_PORT_DROPDOWN}                        xpath=//select[@data-qa-id='settings-network-ports-move-to-port']/option[@value='3']
-${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_2_TO_PORT_DROPDOWN}                        xpath=//select[@data-qa-id='settings-network-ports-move-to-port']/option[@value='4']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_1_TO_PORT_DROPDOWN}                        xpath=//mat-select[@data-qa-id='settings-network-ports-move-to-port']/option[@value='3']
+${SELECTOR_SETTINGS_NETWORK_PORTS_OPTION_2_TO_PORT_DROPDOWN}                        xpath=//mat-select[@data-qa-id='settings-network-ports-move-to-port']/option[@value='4']
 
 ${SELECTOR_SETTINGS_NETWORK_PORTS_MOVE_MODULES_OPTION_WITH_VALUE_3}                 xpath=//option[@value='3']
 ${SELECTOR_SETTINGS_NETWORK_PORTS_MOVE_MODULES_OPTION_WITH_VALUE_4}                 xpath=//option[@value='4']
@@ -525,7 +525,99 @@ ${SELECTOR_SETTINGS_NETWORK_FIREWALL_CANCEL_BUTTON}                             
 ${SELECTOR_SETTINGS_NETWORK_FIREWALL_SAVE_BUTTON}                                   xpath=//button[@data-qa-id='settings-network-firewall-save-button']
 
 # RULE1 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule1-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN}             xpath=//mat-select[@data-qa-id="settings-network-nat-rule1-source-select"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule1-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule1-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule2-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule2-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule3-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule3-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule4-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule4-source-select-option2"]
+
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule5-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule5-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule6-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule6-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule7-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule7-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule8-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule8-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN_OPTION1}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule9-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN_OPTION2}     xpath=//mat-option[@data-qa-id="settings-network-nat-rule9-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule10-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule10-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule11-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule11-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule12-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule12-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule13-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule13-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule14-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule14-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule15-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule15-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule16-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule16-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule17-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule17-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule18-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule18-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule19-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule19-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule20-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule20-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule21-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule21-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule22-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule22-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule23-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule23-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule24-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule24-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule25-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule25-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule26-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule26-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule27-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule27-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule28-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule28-source-select-option2"]
+
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN_OPTION1}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule29-source-select-option1"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN_OPTION2}    xpath=//mat-option[@data-qa-id="settings-network-nat-rule29-source-select-option2"]
+
+
+
+
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule1-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule1-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule1-destination-port"]
@@ -542,7 +634,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule1-firewall-address3-enable-input']
 
 # RULE2 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule2-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule2-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule2-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule2-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule2-destination-port"]
@@ -559,7 +651,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule2-firewall-address3-enable-input']
 
 # RULE3 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule3-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule3-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule3-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule3-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule3-destination-port"]
@@ -576,7 +668,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule3-firewall-address3-enable-input']
 
 # RULE4 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule4-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule4-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule4-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule4-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule4-destination-port"]
@@ -593,7 +685,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule4-firewall-address3-enable-input']
 
 # RULE5 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule5-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule5-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule5-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule5-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule5-destination-port"]
@@ -610,7 +702,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule5-firewall-address3-enable-input']
 
 # RULE6 variables (Updated Rule 5 to Rule 6)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule6-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule6-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule6-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule6-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule6-destination-port"]
@@ -627,7 +719,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule6-firewall-address3-enable-input']
 
 # RULE7 variables (Updated Rule 6 to Rule 7)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule7-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule7-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule7-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule7-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule7-destination-port"]
@@ -644,7 +736,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule7-firewall-address3-enable-input']
 
 # RULE8 variables (Updated Rule 7 to Rule 8)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule8-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule8-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule8-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule8-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule8-destination-port"]
@@ -661,7 +753,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule8-firewall-address3-enable-input']
 
 # RULE9 variables (Updated Rule 8 to Rule 9)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule9-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule9-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule9-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule9-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule9-destination-port"]
@@ -678,7 +770,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS2_ENABLE_CHECKBOX_XPATH}           
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS3_ENABLE_CHECKBOX_XPATH}               xpath=//input[@id='settings-network-nat-rule9-firewall-address3-enable-input']
 
 # RULE10 variables (Updated Rule 9 to Rule 10)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule10-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule10-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule10-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule10-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule10-destination-port"]
@@ -695,7 +787,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule10-firewall-address3-enable-input']
 
 # RULE11 variables (Updated Rule 10 to Rule 11)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule11-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule11-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule11-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule11-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule11-destination-port"]
@@ -712,7 +804,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule11-firewall-address3-enable-input']
 
 # RULE12 variables (Updated Rule 11 to Rule 12)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule12-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule12-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule12-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule12-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule12-destination-port"]
@@ -729,7 +821,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule12-firewall-address3-enable-input']
 
 # RULE13 variables (Updated Rule 12 to Rule 13)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule13-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule13-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule13-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule13-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule13-destination-port"]
@@ -746,7 +838,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule13-firewall-address3-enable-input']
 
 # RULE14 variables (Updated Rule 13 to Rule 14)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule14-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule14-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule14-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule14-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule14-destination-port"]
@@ -763,7 +855,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule14-firewall-address3-enable-input']
 
 # RULE15 variables (Updated Rule 14 to Rule 15)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule15-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule15-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule15-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule15-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule15-destination-port"]
@@ -780,7 +872,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule15-firewall-address3-enable-input']
 
 # RULE16 variables (Updated Rule 15 to Rule 16)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule16-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule16-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule16-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule16-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule16-destination-port"]
@@ -797,7 +889,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule16-firewall-address3-enable-input']
 
 # RULE17 variables (Updated Rule 16 to Rule 17)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule17-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule17-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule17-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule17-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule17-destination-port"]
@@ -814,7 +906,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule17-firewall-address3-enable-input']
 
 # RULE18 variables (Updated Rule 17 to Rule 18)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule18-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule18-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule18-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule18-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule18-destination-port"]
@@ -831,7 +923,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule18-firewall-address3-enable-input']
 
 # RULE19 variables (Updated Rule 18 to Rule 19)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule19-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule19-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule19-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule19-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule19-destination-port"]
@@ -848,7 +940,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule19-firewall-address3-enable-input']
 
 # RULE20 variables (Updated Rule 19 to Rule 20)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule20-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule20-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule20-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule20-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule20-destination-port"]
@@ -865,7 +957,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule20-firewall-address3-enable-input']
 
 # RULE21 variables (Updated Rule 20 to Rule 21)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule21-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule21-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule21-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule21-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule21-destination-port"]
@@ -882,7 +974,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule21-firewall-address3-enable-input']
 
 # RULE22 variables (Updated Rule 21 to Rule 22)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule22-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule22-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule22-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule22-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule22-destination-port"]
@@ -899,7 +991,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule22-firewall-address3-enable-input']
 
 # RULE23 variables (Updated Rule 22 to Rule 23)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule23-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule23-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule23-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule23-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule23-destination-port"]
@@ -916,7 +1008,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule23-firewall-address3-enable-input']
 
 # RULE24 variables (Updated Rule 23 to Rule 24)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule24-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule24-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule24-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule24-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule24-destination-port"]
@@ -933,7 +1025,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule24-firewall-address3-enable-input']
 
 # RULE25 variables (Updated Rule 24 to Rule 25)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule25-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule25-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule25-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule25-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule25-destination-port"]
@@ -950,7 +1042,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule25-firewall-address3-enable-input']
 
 # RULE26 variables (Updated Rule 25 to Rule 26)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule26-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule26-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule26-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule26-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule26-destination-port"]
@@ -967,7 +1059,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule26-firewall-address3-enable-input']
 
 # RULE27 variables (Updated Rule 26 to Rule 27)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule27-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule27-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule27-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule27-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule27-destination-port"]
@@ -984,7 +1076,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule27-firewall-address3-enable-input']
 
 # RULE28 variables (Updated Rule 27 to Rule 28)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule28-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule28-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule28-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule28-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule28-destination-port"]
@@ -1001,7 +1093,7 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule28-firewall-address3-enable-input']
 
 # RULE29 variables (Updated Rule 28 to Rule 29)
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule29-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule29-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule29-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule29-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule29-destination-port"]
@@ -1018,158 +1110,158 @@ ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS2_ENABLE_CHECKBOX_XPATH}          
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS3_ENABLE_CHECKBOX_XPATH}              xpath=//input[@id='settings-network-nat-rule29-firewall-address3-enable-input']
 
 # RULE4 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule4-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule4-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule4-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule4-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule4-destination-port"]
 
 # RULE5 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule5-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule5-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule5-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule5-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule5-destination-port"]
 
 # RULE6 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule6-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule6-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule6-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule6-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule6-destination-port"]
 
 # RULE7 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule7-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule7-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule7-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule7-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule7-destination-port"]
 
 # RULE8 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule8-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule8-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule8-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule8-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule8-destination-port"]
 
 # RULE9 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN}                      xpath=//select[@data-qa-id="settings-network-nat-rule9-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN}                      xpath=//mat-select[@data-qa-id="settings-network-nat-rule9-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_PORT_INPUT}                            xpath=//input[@data-qa-id="settings-network-nat-rule9-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_ADDRESS_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule9-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_PORT_INPUT}                              xpath=//input[@data-qa-id="settings-network-nat-rule9-destination-port"]
 
 # RULE10 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule10-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule10-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule10-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule10-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule10-destination-port"]
 
 # RULE11 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule11-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule11-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule11-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule11-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule11-destination-port"]
 
 # RULE12 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule12-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule12-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule12-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule12-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule12-destination-port"]
 
 # RULE13 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule13-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule13-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule13-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule13-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule13-destination-port"]
 
 # RULE14 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule14-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule14-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule14-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule14-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule14-destination-port"]
 
 # RULE15 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule15-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule15-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule15-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule15-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule15-destination-port"]
 
 # RULE16 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule16-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule16-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule16-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule16-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule16-destination-port"]
 
 # RULE17 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule17-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule17-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule17-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule17-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule17-destination-port"]
 
 # RULE18 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule18-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule18-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule18-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule18-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule18-destination-port"]
 
 # RULE19 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule19-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule19-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule19-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule19-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule19-destination-port"]
 
 # RULE20 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule20-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule20-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule20-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule20-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule20-destination-port"]
 
 # RULE21 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule21-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule21-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule21-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule21-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule21-destination-port"]
 
 # RULE22 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule22-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule22-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule22-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule22-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule22-destination-port"]
 
 # RULE23 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule23-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule23-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule23-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule23-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule23-destination-port"]
 
 # RULE24 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule24-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule24-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule24-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule24-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule24-destination-port"]
 
 # RULE25 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule25-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule25-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule25-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule25-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule25-destination-port"]
 
 # RULE26 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule26-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule26-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule26-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule26-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_PORT_INPUT}                             ${EMPTY}
 
 # RULE27 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule27-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule27-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule27-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule27-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule27-destination-port"]
 
 # RULE28 variables
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule28-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule28-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule28-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule28-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_PORT_INPUT}                             ${EMPTY}
 
 # RULE29 variables
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_TITLE}                                       xpath=//div[contains(@class, "form_title") and contains(., "Nat rule 29")]
-${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN}                     xpath=//select[@data-qa-id="settings-network-nat-rule29-source-select"]
+${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN}                     xpath=//mat-select[@data-qa-id="settings-network-nat-rule29-source-select"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_PORT_INPUT}                           xpath=//input[@data-qa-id="settings-network-nat-rule29-source-port"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_ADDRESS_INPUT}                          xpath=//input[@data-qa-id="settings-network-nat-rule29-destination-address"]
 ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_PORT_INPUT}                             xpath=//input[@data-qa-id="settings-network-nat-rule29-destination-port"]
@@ -1196,7 +1288,7 @@ ${UNCHECKED_CHECKBOX_XPATH}                                                     
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_EMAIL_INPUT_1}                             xpath=//input[@data-qa-id="settings-network-smtp-server1-sender-email"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_NAME_INPUT_1}                              xpath=//input[@data-qa-id="settings-network-smtp-server1-sender-name"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_EMAIL_SUBJECT_INPUT_1}                            xpath=//input[@data-qa-id="settings-network-smtp-server1-email-subject"]
-${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_1}                 xpath=//input[@id='settings-network-smtp-server1-auth-enable-input']
+${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_1}                 xpath=//input[@id='settings-network-smtp-server1-auth-enable-input-input']
 
 # ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_1_CHECKED}    xpath=//input[@id='settings-network-smtp-server1-auth-enable-input' and contains(@class, 'mdc-checkbox--selected')]
 # ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_1_UNCHECKED}    xpath=//input[@id='settings-network-smtp-server1-auth-enable-input' and not(contains(@class, 'mdc-checkbox--selected'))]
@@ -1219,7 +1311,7 @@ ${SELECTOR_SETTINGS_NETWORK_EMAIL_WEBVISION_CHECKBOX_2}                         
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_EMAIL_INPUT_2}                             xpath=//input[@data-qa-id="settings-network-smtp-server2-sender-email"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_NAME_INPUT_2}                              xpath=//input[@data-qa-id="settings-network-smtp-server2-sender-name"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_EMAIL_SUBJECT_INPUT_2}                            xpath=//input[@data-qa-id="settings-network-smtp-server2-email-subject"]
-${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_2}                 xpath=//input[@id='settings-network-smtp-server2-auth-enable-input']
+${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_2}                 xpath=//input[@id='settings-network-smtp-server2-auth-enable-input-input']
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_DOMAIN_INPUT_2}                                   xpath=//input[@data-qa-id="settings-network-smtp-server2-auth-domain"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_USERNAME_INPUT_2}                            xpath=//input[@data-qa-id="settings-network-smtp-server2-auth-username"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_PASSWORD_INPUT_2}                            xpath=//input[@data-qa-id="settings-network-smtp-server2-auth-password"]
@@ -1235,7 +1327,7 @@ ${SELECTOR_SETTINGS_NETWORK_EMAIL_WEBVISION_CHECKBOX_3}                         
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_EMAIL_INPUT_3}                             xpath=//input[@data-qa-id="settings-network-smtp-server3-sender-email"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_NAME_INPUT_3}                              xpath=//input[@data-qa-id="settings-network-smtp-server3-sender-name"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_EMAIL_SUBJECT_INPUT_3}                            xpath=//input[@data-qa-id="settings-network-smtp-server3-email-subject"]
-${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_3}                 xpath=//input[@id='settings-network-smtp-server3-auth-enable-input']
+${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_3}                 xpath=//input[@id='settings-network-smtp-server3-auth-enable-input-input']
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_DOMAIN_INPUT_3}                                   xpath=//input[@data-qa-id="settings-network-smtp-server3-auth-domain"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_USERNAME_INPUT_3}                            xpath=//input[@data-qa-id="settings-network-smtp-server3-auth-username"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_PASSWORD_INPUT_3}                            xpath=//input[@data-qa-id="settings-network-smtp-server3-auth-password"]
@@ -1251,7 +1343,7 @@ ${SELECTOR_SETTINGS_NETWORK_EMAIL_WEBVISION_CHECKBOX_4}                         
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_EMAIL_INPUT_4}                             xpath=//input[@data-qa-id="settings-network-smtp-server4-sender-email"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_NAME_INPUT_4}                              xpath=//input[@data-qa-id="settings-network-smtp-server4-sender-name"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_EMAIL_SUBJECT_INPUT_4}                            xpath=//input[@data-qa-id="settings-network-smtp-server4-email-subject"]
-${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_4}                 xpath=//input[@id='settings-network-smtp-server4-auth-enable-input']
+${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_4}                 xpath=//input[@id='settings-network-smtp-server4-auth-enable-input-input']
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_DOMAIN_INPUT_4}                                   xpath=//input[@data-qa-id="settings-network-smtp-server4-auth-domain"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_USERNAME_INPUT_4}                            xpath=//input[@data-qa-id="settings-network-smtp-server4-auth-username"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_PASSWORD_INPUT_4}                            xpath=//input[@data-qa-id="settings-network-smtp-server4-auth-password"]
@@ -1267,7 +1359,7 @@ ${SELECTOR_SETTINGS_NETWORK_EMAIL_WEBVISION_CHECKBOX_5}                         
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_EMAIL_INPUT_5}                             xpath=//input[@data-qa-id="settings-network-smtp-server5-sender-email"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_SENDER_NAME_INPUT_5}                              xpath=//input[@data-qa-id="settings-network-smtp-server5-sender-name"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_EMAIL_SUBJECT_INPUT_5}                            xpath=//input[@data-qa-id="settings-network-smtp-server5-email-subject"]
-${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_5}                 xpath=//input[@id='settings-network-smtp-server5-auth-enable-input']
+${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTHENTICATING_SERVER_CHECKBOX_5}                 xpath=//input[@id='settings-network-smtp-server5-auth-enable-input-input']
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_DOMAIN_INPUT_5}                                   xpath=//input[@data-qa-id="settings-network-smtp-server5-auth-domain"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_USERNAME_INPUT_5}                            xpath=//input[@data-qa-id="settings-network-smtp-server5-auth-username"]
 ${SELECTOR_SETTINGS_NETWORK_EMAIL_AUTH_PASSWORD_INPUT_5}                            xpath=//input[@data-qa-id="settings-network-smtp-server5-auth-password"]
@@ -1289,7 +1381,7 @@ ${SELECTOR_SETTINGS_NETWORK_HISTORY_PORT_INPUT}                                 
 ${SELECTOR_SETTINGS_NETWORK_HISTORY_TIMEOUT_INPUT}                                  xpath=//input[@data-qa-id="settings-network-history-timeout"]
 ${SELECTOR_SETTINGS_NETWORK_HISTORY_DATABASE_NAME_INPUT}                            xpath=//input[@data-qa-id="settings-network-history-database-name"]
 ${SELECTOR_SETTINGS_NETWORK_HISTORY_DATABASE_URL_INPUT}                             xpath=//input[@data-qa-id="settings-network-history-database-url"]
-${SELECTOR_SETTINGS_NETWORK_HISTORY_STORING_FORMAT_SELECT}                          xpath=//select[@data-qa-id="settings-network-history-save-mode"]
+${SELECTOR_SETTINGS_NETWORK_HISTORY_STORING_FORMAT_SELECT}                          xpath=//mat-select[@data-qa-id="settings-network-history-save-mode"]
 ${SELECTOR_SETTINGS_NETWORK_HISTORY_CANCEL_BUTTON}                                  xpath=//button[@data-qa-id="settings-network-history-cancel-button"]
 ${SELECTOR_SETTINGS_NETWORK_HISTORY_SAVE_BUTTON}                                    xpath=//button[@data-qa-id="settings-network-history-save-button"]
 
@@ -1313,8 +1405,8 @@ ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_TITLE}                                
 ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_CLOSE_ICON}                               xpath=//mat-icon[@data-mat-icon-name='icon-delete-x']
 ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_USER_NAME}                                xpath=//input[@data-qa-id='settings-user-dialog-username']
 ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_PASSWORD}                                 xpath=//input[@data-qa-id='settings-user-dialog-new-password']
-${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_USER_GROUP}                               xpath=//select[@data-qa-id='settings-user-dialog-user-group']
-${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_START_PAGE}                               xpath=//select[@data-qa-id='settings-user-dialog-start-picture']
+${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_USER_GROUP}                               xpath=//mat-select[@data-qa-id='settings-user-dialog-user-group']
+${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_START_PAGE}                               xpath=//mat-select[@data-qa-id='settings-user-dialog-start-picture']
 ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_SYNCHRONIZE_CHECKBOX}                     xpath=//input[@id='settings-user-dialog-synchronize-input']
 ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_CANCEL_BUTTON}                            xpath=//button[@data-qa-id='settings-user-dialog-cancel-button']
 ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_ADD_BUTTON}                               xpath=//button[@data-qa-id='settings-user-dialog-add-button']
@@ -1326,8 +1418,8 @@ ${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_TITLE}                               
 ${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_USERNAME_INPUT}                          xpath=//input[@data-qa-id='settings-user-dialog-username']
 ${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_UPDATE_PASSWORD_CHECKBOX}                xpath=//input[@id='settings-user-dialog-update-password-input']
 ${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_NEW_PASSWORD_INPUT}                      xpath=//input[@data-qa-id='settings-user-dialog-new-password']
-${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_USER_GROUP_SELECT}                       xpath=//select[@data-qa-id='settings-user-dialog-user-group']
-${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_START_PAGE_SELECT}                       xpath=//select[@data-qa-id='settings-user-dialog-start-picture']
+${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_USER_GROUP_SELECT}                       xpath=//mat-select[@data-qa-id='settings-user-dialog-user-group']
+${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_START_PAGE_SELECT}                       xpath=//mat-select[@data-qa-id='settings-user-dialog-start-picture']
 ${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_SYNCHRONIZE_CHECKBOX}                    xpath=//input[@id='settings-user-dialog-synchronize-input']
 ${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_CANCEL_BUTTON}                           xpath=//button[@data-qa-id='settings-user-dialog-cancel-button']
 ${SELECTOR_SETTINGS_USER_USERS_EDIT_DIALOG_SAVE_BUTTON}                             xpath=//button[@data-qa-id='settings-user-dialog-save-button']

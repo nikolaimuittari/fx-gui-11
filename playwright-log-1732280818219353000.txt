@@ -1,0 +1,12 @@
+{"level":30,"time":"2024-11-22T13:06:59.323Z","pid":25504,"hostname":"LT-PW014SWR","msg":"Listening on 56651"}
+(node:25504) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2024-11-22T13:06:59.711Z","pid":25504,"hostname":"LT-PW014SWR","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2024-11-22T13:07:00.061Z","pid":25504,"hostname":"LT-PW014SWR","msg":"Adding browser to stack: chromium, version: 130.0.6723.31"}
+{"level":30,"time":"2024-11-22T13:07:00.062Z","pid":25504,"hostname":"LT-PW014SWR","msg":"End of node method newBrowser"}
+{"level":30,"time":"2024-11-22T13:07:00.062Z","pid":25504,"hostname":"LT-PW014SWR","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2024-11-22T13:07:00.092Z","pid":25504,"hostname":"LT-PW014SWR","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-11-22T13:07:00.092Z","pid":25504,"hostname":"LT-PW014SWR","msg":"Trace file: "}
+{"level":30,"time":"2024-11-22T13:07:00.108Z","pid":25504,"hostname":"LT-PW014SWR","msg":"Changed active context"}
+{"level":30,"time":"2024-11-22T13:07:00.091Z","pid":25504,"hostname":"LT-PW014SWR","msg":"Start of node method newContext"}
+{"level":30,"time":"2024-11-22T13:07:00.109Z","pid":25504,"hostname":"LT-PW014SWR","msg":"End of node method newContext"}

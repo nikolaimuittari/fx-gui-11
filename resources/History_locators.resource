@@ -36,7 +36,7 @@ ${selector_history_pointsettings_form_sampleTime_input}                 xpath=//
 
 ${selector_history_pointsettings_form_sampleTime_ddwn}                  xpath=//select[@formcontrolname='samplingRateUnit']
 ${selector_history_pointsettings_form_recording_chkbx}                  xpath=//div[@class='detail_item']//mat-checkbox[@formcontrolname='enable']
-${selector_history_pointsettings_form_energy_ddwn}                      xpath=//select[contains(@class, 'form_select') and contains(@formcontrolname, 'pointType')]
+${selector_history_pointsettings_form_energy_ddwn}                      xpath=//select[@formcontrolname="energyChannel"]    # 20241107 xpath=//select[contains(@class, 'form_select') and contains(@formcontrolname, 'pointType')]
 
 ${selector_history_pointsettings_form_histpoints_remove_form}           xpath=//div[contains(@class, 'dialog_header')]/mat-icon[contains(@class, 'close_icon') and @svgicon='icon-delete-x']
 ${selector_history_pointsettings_form_histpoints_delete_btn}            xpath=//button[contains(text(), ' Delete ')]

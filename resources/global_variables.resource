@@ -10,7 +10,7 @@ Library     DateTime
 Library     Process
 Library     OperatingSystem
 Library     SeleniumLibrary
-Library     RPA.JavaAccessBridge
+# Library     RPA.JavaAccessBridge
 Resource    automation_locators_id.resource
 
 
@@ -303,7 +303,7 @@ Action Button Or Cancel Button
 
         ${snack-bar_visible}=    Check Xpath visible    xpath=//span[@class='mdc-button__label']
         Log To Console    Snack-bar: ${snack-bar_visible}
-        ${snack-bar_text}=    Get Text From XPath    xpath=//span[@class='mdc-button__label']
+        ${snack-bar_text}=   Get Text From Xpath    xpath=//span[@class='mdc-button__label']
         Log To Console    Snack-bar text: ${snack-bar_text}
     ELSE IF    $save==2 or $save=='nosave' or $save=='Nosave'
         ${visibility}=    Run Keyword And Return Status    Check Xpath Visible    ${cancel_btn}
@@ -323,8 +323,8 @@ Snack-bar Visibility And Content
     # Log To Console    Snack-bar button: ${snack-bar_button_visible}
 
     IF    ${snack-bar_visible}
-        ${snack-bar_text_1}=    Get Text From XPath    xpath=//span[@class='mdc-button__label']
-        ${snack-bar_text_2}=    Get Text From XPath
+        ${snack-bar_text_1}=   Get Text From Xpath    xpath=//span[@class='mdc-button__label']
+        ${snack-bar_text_2}=   Get Text From Xpath
         ...    xpath=//div[@class='mat-mdc-snack-bar-actions mdc-snackbar__actions ng-star-inserted']
         Log To Console    Snack-bar text: ${snack-bar_text_1} : ${snack-bar_text_2}
     END

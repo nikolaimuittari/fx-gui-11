@@ -206,10 +206,9 @@ ${SELECTOR_AUTOMATION_POINT_CP_EDIT_CTRL_STAGE1_LIMIT_POINT_INPUT}          xpat
 ${SELECTOR_AUTOMATION_POINT_CP_EDIT_CTRL_STAGE1_LIMIT_VALUE_INPUT}          xpath=//input[@data-qa-id='automation-point-edit-stage1-limit-value']
 ${SELECTOR_AUTOMATION_POINT_CP_EDIT_CTRL_STAGE1_LIMIT_P_BAND_INPUT}         xpath=//input[@data-qa-id='automation-point-edit-stage1-limit-p-band']
 
-# ${SELECTOR_AUTOMATION_POINT_EDIT_CANCEL_BUTTON}    xpath=//button[@data-qa-id='automation-point-edit-cancel-button']
-# ${SELECTOR_AUTOMATION_POINT_EDIT_SAVE_BUTTON}    xpath=//button[@data-qa-id='automation-point-edit-save-button']
-
+####
 # AO point
+####
 ${SELECTOR_AUTOMATION_POINT_AO_EDIT_MIN_VOLTAGE_INPUT}                      xpath=//*[@data-qa-id="automation-point-edit-min-voltage"]
 ${SELECTOR_AUTOMATION_POINT_AO_EDIT_MAX_VOLTAGE_INPUT}                      xpath=//*[@data-qa-id="automation-point-edit-max-voltage"]
 ${SELECTOR_AUTOMATION_POINT_AO_EDIT_DEFAULT_OLD_VALUE_BUTTON}               xpath=//span[@data-qa-id="automation-point-edit-default-type-old-value"]
@@ -322,7 +321,6 @@ ${SELECTOR_AUTOMATION_POINT_TS_EVENT_TYPE_REAL}                             xpat
 ${SELECTOR_AUTOMATION_POINT_TS_EVENT_TYPE_ENUM}                             xpath=//span[contains(text(), 'Enumerated')]
 
 ${SELECTOR_AUTOMATION_POINT_TS_DEFAULT_VALUE_INPUT}                         xpath=//input[@data-qa-id="automation-time-schedule-event-edit-value"]
-# xpath=//input[@data-qa-id="automation-time-schedule-edit-default-value"]
 ${SELECTOR_AUTOMATION_POINT_TS_SET_VALUE_OPTION_1}                          xpath=//mat-option[@data-qa-id="automation-time-schedule-event-edit-type-option1"]
 ${SELECTOR_AUTOMATION_POINT_TS_SET_VALUE_OPTION_2}                          xpath=//mat-option[@data-qa-id="automation-time-schedule-event-edit-type-option2"]
 
@@ -431,22 +429,6 @@ ${SELECTOR_AUTOMATION_POINT_AD_EDIT_DEVICE_TYPE_OPTION3}                    xpat
 ${SELECTOR_AUTOMATION_POINT_AD_EDIT_DEVICE_TYPE_OPTION4}                    xpath=//mat-option[@data-qa-id='automation-alarm-device-edit-device-type-option4']
 ${SELECTOR_AUTOMATION_POINT_AD_EDIT_DEVICE_TYPE_OPTION5}                    xpath=//mat-option[@data-qa-id='automation-alarm-device-edit-device-type-option5']
 ${SELECTOR_AUTOMATION_POINT_AD_EDIT_DEVICE_TYPE_OPTION6}                    xpath=//mat-option[@data-qa-id='automation-alarm-device-edit-device-type-option6']
-
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_ACKNOWLEDGE_CHKBX}    xpath=//mat-checkbox[@formcontrolname="acknowledge"]    # NO ID
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_LOCK_STATE_CHKBX}    xpath=//mat-checkbox[@formcontrolname="lockState"]    # NO ID
-
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE0_CHKBX}    xpath=//mat-checkbox[@formcontrolname="0"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE1_CHKBX}    xpath=//mat-checkbox[@formcontrolname="1"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE2_CHKBX}    xpath=//mat-checkbox[@formcontrolname="2"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE3_CHKBX}    xpath=//mat-checkbox[@formcontrolname="3"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE4_CHKBX}    xpath=//mat-checkbox[@formcontrolname="4"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE5_CHKBX}    xpath=//mat-checkbox[@formcontrolname="5"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE6_CHKBX}    xpath=//mat-checkbox[@formcontrolname="6"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE7_CHKBX}    xpath=//mat-checkbox[@formcontrolname="7"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE8_CHKBX}    xpath=//mat-checkbox[@formcontrolname="8"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE9_CHKBX}    xpath=//mat-checkbox[@formcontrolname="9"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE10_CHKBX}    xpath=//mat-checkbox[@formcontrolname="10"]
-# ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_STATE11_CHKBX}    xpath=//mat-checkbox[@formcontrolname="11"]
 
 ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_ACKNOWLEDGE_CHKBX}               xpath=//input[@id='automation-alarm-device-edit-events-acknowledge-input']
 ${SELECTOR_AUTOMATION_POINT_AD_EDIT_EVENTS_LOCK_STATE_CHKBX}                xpath=//input[@id='automation-alarm-device-edit-events-lock-state-input']
@@ -620,19 +602,24 @@ ${SELECTOR_AUTOMATION_MODULE_VERSION_PROGRAM_CLOSE_BUTTON}                  xpat
 ####
 
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_PORT_SELECT}                       xpath=//mat-select[@data-qa-id="automation-modbus-device-edit-port"]
-# 2024.10.29  20.0.82 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_ADDRESS_INPUT}                     xpath=//input[@data-qa-id="automation-modbus-device-edit-modbus-address"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_ADDRESS_INPUT}                     xpath=//input[@data-qa-id="automation-modbus-device-edit-bus-address"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_START_REGISTER_INPUT}              xpath=//input[@data-qa-id="automation-modbus-device-edit-start-register"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_BUS_ADDRESS_INPUT}                 xpath=//input[@data-qa-id="automation-modbus-device-edit-bus-address"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_SELECT}              xpath=//mat-select[@data-qa-id="automation-modbus-device-edit-register-type"]
+
+${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION1}             xpath=//mat-option[@data-qa-id="automation-modbus-device-edit-register-type-option1"]
+${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION2}             xpath=//mat-option[@data-qa-id="automation-modbus-device-edit-register-type-option2"]
+${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION3}             xpath=//mat-option[@data-qa-id="automation-modbus-device-edit-register-type-option3"]
+${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION4}             xpath=//mat-option[@data-qa-id="automation-modbus-device-edit-register-type-option4"]
+${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION5}             xpath=//mat-option[@data-qa-id="automation-modbus-device-edit-register-type-option5"]
+${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_TYPE_OPTION6}             xpath=//mat-option[@data-qa-id="automation-modbus-device-edit-register-type-option6"]
+
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_START_REGISTER_INPUT}              xpath=//input[@data-qa-id="automation-modbus-device-edit-start-register"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_REGISTER_COUNT_INPUT}              xpath=//input[@data-qa-id="automation-modbus-device-edit-register-count"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_DEBUG_CHKBX}                       xpath=//input[@id='automation-modbus-device-edit-debug-input']    # NO ID
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_TCP_IP_MODULE_CHKBX}               xpath=//input[@id='automation-modbus-device-edit-tcp-ip-module-input']    # NO ID
-# 2024.10.29  20.0.82  ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_IP_PORT_INPUT}                     xpath=//input[@data-qa-id="automation-modbus-device-edit-ip-port"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_IP_PORT_INPUT}                     xpath=//input[@data-qa-id="automation-module-edit-ip-port"]
 
-# 2024.10.29  20.0.82  ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_IP_ADDRESS_INPUT}                  xpath=//input[@data-qa-id="automation-modbus-device-edit-ip-address"]
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_IP_ADDRESS_INPUT}                  xpath=//input[@data-qa-id="automation-module-edit-ip-address"]
 
 ${SELECTOR_AUTOMATION_MODBUS_DEVICE_EDIT_IP_ADDRESS_INPUT}                  xpath=//input[@data-qa-id="automation-modbus-device-edit-ip-address"]

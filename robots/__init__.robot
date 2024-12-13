@@ -18,7 +18,7 @@ Suite setup
     New Browser
     ...    browser=chromium
     ...    headless=false
-    ...    slowMo=100ms
+    ...    slowMo=1ms
     New Context    viewport={'width': 1920, 'height': 1000}    screen={'width': 1600, 'height': 900}
     # New Context    viewport={'width': 1920, 'height': 1000}    deviceScaleFactor=0.5    # screen={'width': 1900, 'height': 896}
     # New Browser    chromium    headless=false
@@ -33,10 +33,13 @@ Suite setup
     Populate environment
 
 Populate environment
-    Set Global Variable    ${RESOURCES}    ${CURDIR}/../resources
+    # Set Global Variable    ${RESOURCES}    ${CURDIR}/../resources
+    Set Global Variable    ${RESOURCES}    ${CURDIR}\\..\\resources
+
 
     Log To Console    Setting global variables from ${target_config}
-    ${items}=    Get Variables From File    ${CURDIR}/../../${target_config}
+    # ${items}=    Get Variables From File    ${CURDIR}/../../${target_config}
+    ${items}=    Get Variables From File    c:\\QA\\fx-gui-11\\targetconfig.json
     FOR    ${key}    ${value}    IN    &{items}
         Set Global Variable    ${${key}}    ${value}
         Log To Console    ${key} = ${value}

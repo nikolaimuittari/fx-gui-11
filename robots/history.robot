@@ -56,10 +56,6 @@ History Page Features Walkthrough
     ...    energy=2
     ...    save=save
 
-    # [Arguments]    ${point_name}    ${tolerance}    ${samplecount}    ${sampletime}    ${sampletime_period}    ${recording}    ${energy}
-    # History Point Edit    AI0001_M    1.2    20000    2    2    1    2    save
-    # [Arguments]    ${point_name}    ${tolerance}    ${samplecount}    ${sampletime}    ${sampletime_period}    ${recording}    ${energy}
-
     History Point Remove
     ...    point_name=AI_0001_M
     ...    save=save
@@ -87,7 +83,6 @@ History Page Features Walkthrough
     ...    save=save
     ...    point_name=AI_0001_M
 
-    # [Arguments]    ${group_name}    ${timespan}    ${timespan_item}    ${samples_max}    ${email}    ${server}    ${recipient}    ${timespan_email}    ${samples_day}
     History Group Remove
     ...    group_name=GROUP_1
     ...    save=save

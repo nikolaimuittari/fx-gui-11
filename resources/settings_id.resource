@@ -233,10 +233,10 @@ Settings System Activations QA-ID
 
     ${snack-bar_visible}=    Check Xpath visible    xpath=//span[@class='mdc-button__label']
     Log To Console    Snack-bar: ${snack-bar_visible}
-    ${snack-bar_text}=    Get Text From XPath    xpath=//span[@class='mdc-button__label']
+    ${snack-bar_text}=   Get Text From Xpath    xpath=//span[@class='mdc-button__label']
     Log To Console    Snack-bar text: ${snack-bar_text}
 
-    ${fx_base_key_value}=    Get Text From XPath    ${SELECTOR_SETTINGS_ACTIVATIONS_FXBASE_ACTIVATION_KEY_INPUT}
+    ${fx_base_key_value}=   Get Text From Xpath    ${SELECTOR_SETTINGS_ACTIVATIONS_FXBASE_ACTIVATION_KEY_INPUT}
     Log To Console    FX base key: ${fx_base_key_value}
 
     ${trimmed_string}=    Set Variable    ${fx_base_key_value}[:-5]
@@ -258,13 +258,13 @@ Settings System Activations QA-ID
         Wait For Elements State    ${SELECTOR_SETTINGS_ACTIVATION_FX_BASE_SOFTWARE_ACTIVATE_BUTTON}    timeout=2s
         Browser.Click    ${SELECTOR_SETTINGS_ACTIVATION_FX_BASE_SOFTWARE_ACTIVATE_BUTTON}
         Sleep    2s
-        ${fx_base_key_value}=    Get Text From XPath    ${SELECTOR_SETTINGS_ACTIVATIONS_FXBASE_ACTIVATION_KEY_INPUT}
+        ${fx_base_key_value}=   Get Text From Xpath    ${SELECTOR_SETTINGS_ACTIVATIONS_FXBASE_ACTIVATION_KEY_INPUT}
         Log To Console    FX base activation: ${fx_base_key_value}
     END
 
     ${snack-bar_visible}=    Check Xpath visible    xpath=//span[@class='mdc-button__label']
     Log To Console    Snack-bar: ${snack-bar_visible}
-    ${snack-bar_text}=    Get Text From XPath    xpath=//span[@class='mdc-button__label']
+    ${snack-bar_text}=   Get Text From Xpath    xpath=//span[@class='mdc-button__label']
     Log To Console    Snack-bar text: ${snack-bar_text}
 
 Settings System SMS QA-ID
@@ -280,27 +280,37 @@ Settings System SMS QA-ID
     Uncheck Checkbox    ${SELECTOR_SETTINGS_SMS_SEND_USING_WEB_SERVICE_CHECKBOX}
     Check Checkbox    ${SELECTOR_SETTINGS_SMS_SEND_USING_WEB_SERVICE_CHECKBOX}
 
-    ${server_host_1}=    Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_1_INPUT}
+    ${server_host_1}=   Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_1_INPUT}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_1_INPUT}    ${EMPTY}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_1_INPUT}    ${server_host_1}
 
-    ${server_host_2}=    Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_2_INPUT}
+    ${server_host_2}=   Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_2_INPUT}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_2_INPUT}    ${EMPTY}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_2_INPUT}    ${server_host_2}
 
-    ${server_host_3}=    Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_3_INPUT}
+    ${server_host_3}=   Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_3_INPUT}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_3_INPUT}    ${EMPTY}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_3_INPUT}    ${server_host_3}
 
-    ${server_host_4}=    Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_4_INPUT}
+    ${server_host_4}=   Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_4_INPUT}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_4_INPUT}    ${EMPTY}
     Fill Text    ${SELECTOR_SETTINGS_SMS_SERVER_HOST_4_INPUT}    ${server_host_4}
 
-    ${activation_id}=    Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_ACTIVATION_ID_INPUT}
+    ${activation_id}=   Get Text From Xpath    ${SELECTOR_SETTINGS_SMS_ACTIVATION_ID_INPUT}
     Fill Text    ${SELECTOR_SETTINGS_SMS_ACTIVATION_ID_INPUT}    ${EMPTY}
     Fill Text    ${SELECTOR_SETTINGS_SMS_ACTIVATION_ID_INPUT}    ${activation_id}
 
-    Select Options By    ${SELECTOR_SETTINGS_SMS_SMS_SEND_VALIDITY_TIME_DROPDOWN}    value    3
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_SMS_SEND_VALIDITY_TIME_DROPDOWN}
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_1}
+
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_SMS_SEND_VALIDITY_TIME_DROPDOWN}
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_2}
+
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_SMS_SEND_VALIDITY_TIME_DROPDOWN}
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_3}
+
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_SMS_SEND_VALIDITY_TIME_DROPDOWN}
+    Browser.Click    ${SELECTOR_SETTINGS_SMS_VALIDITY_TIME_OPTION_4}
 
     Check Checkbox    ${SELECTOR_SETTINGS_SMS_DEBUG_GSM_MODEM_CHECKBOX}
     # Checkbox Should Be Selected    ${SELECTOR_SETTINGS_SMS_DEBUG_GSM_MODEM_CHECKBOX}
@@ -320,14 +330,14 @@ Settings System Information Synchronization QA-ID
     Browser.Click    ${selector_settings_system_synchronization_item}
 
     Check Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_CALENDAR_CHECKBOX}
-    Check Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_DISABLE_WEBVISION_CALENDAR_CHECKBOX}
+    # Check Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_DISABLE_WEBVISION_CALENDAR_CHECKBOX}
     Check Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_STATE_TEXTS_CHECKBOX}
     Check Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_TIME_TABLES_CHECKBOX}
     Check Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_USER_RIGHTS_CHECKBOX}
     Check Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_ALARM_GROUPS_CHECKBOX}
 
     Uncheck Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_CALENDAR_CHECKBOX}
-    Uncheck Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_DISABLE_WEBVISION_CALENDAR_CHECKBOX}
+    # Uncheck Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_DISABLE_WEBVISION_CALENDAR_CHECKBOX}
     Uncheck Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_STATE_TEXTS_CHECKBOX}
     Uncheck Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_TIME_TABLES_CHECKBOX}
     Uncheck Checkbox    ${SELECTOR_SETTINGS_SYNCHRO_USER_RIGHTS_CHECKBOX}
@@ -1218,7 +1228,12 @@ Settings Network NAT Settings QA-ID
     Wait for Elements State    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN}    visible    timeout=2s
 
     # RULE 1    variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN}    value    1
+    Browser.Click    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN}
+    Browser.Click    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN_OPTION1}
+
+    Browser.Click    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN}
+    Browser.Click    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_ADDRESS_DROPDOWN_OPTION2}
+
     Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_SOURCE_PORT_INPUT}    ${random_port}
     Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_DEST_ADDRESS_INPUT}    ${random_ip}
     Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_DEST_PORT_INPUT}    ${random_port}
@@ -1239,568 +1254,568 @@ Settings Network NAT Settings QA-ID
     Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
     Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE1_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
 
-    # RULE 2 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 3 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 4 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 5 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 6 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 7 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 8 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 9 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 10 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 11 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 12 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 13 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 14 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 15 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 16 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 17 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 18 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 19 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 20 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 21 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 22 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 23 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 24 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 25 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 26 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 27 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 28 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    # RULE 29 variables
-    Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN}    value    1
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_PORT_INPUT}    ${random_port}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_ADDRESS_INPUT}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_PORT_INPUT}    ${random_port}
-
-    # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_PRIVATE_ADDRESS_CHECKBOX_XPATH}
-    # Log To Console    ${checkbox_checked}
-
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS1_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS2_ENABLE_CHECKBOX_XPATH}
-    Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS3_ENABLE_CHECKBOX_XPATH}
-
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
-    Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
-
-    ${button_result}=    Action Button Or Cancel Button
-    ...    ${SELECTOR_SETTINGS_NETWORK_NAT_SAVE_BUTTON}
-    ...    ${SELECTOR_SETTINGS_NETWORK_NAT_CANCEL_BUTTON}
-    ...    ${save}
-    Log To Console    ${button_result}
+    # # RULE 2 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE2_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 3 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE3_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 4 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE4_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 5 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE5_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 6 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE6_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 7 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE7_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 8 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE8_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 9 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE9_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 10 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE10_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 11 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE11_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 12 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE12_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 13 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE13_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 14 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE14_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 15 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE15_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 16 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE16_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 17 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE17_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 18 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE18_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 19 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE19_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 20 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE20_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 21 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE21_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 22 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE22_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 23 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE23_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 24 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE24_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 25 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE25_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 26 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE26_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 27 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE27_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 28 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE28_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # # RULE 29 variables
+    # Select Options By    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_ADDRESS_DROPDOWN}    value    1
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_SOURCE_PORT_INPUT}    ${random_port}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_ADDRESS_INPUT}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_DEST_PORT_INPUT}    ${random_port}
+
+    # # ${checkbox_checked}=    Run Keyword And Return Status    Checkbox Should Not Be Selected    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_PRIVATE_ADDRESS_CHECKBOX_XPATH}
+    # # Log To Console    ${checkbox_checked}
+
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS1_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS2_ENABLE_CHECKBOX_XPATH}
+    # Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS3_ENABLE_CHECKBOX_XPATH}
+
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS1_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS1_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS2_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS2_MASK_INPUT_XPATH}    ${random_subnet_mask}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS3_IP_INPUT_XPATH}    ${random_ip}
+    # Fill text    ${SELECTOR_SETTINGS_NETWORK_NAT_RULE29_ADDRESS3_MASK_INPUT_XPATH}    ${random_subnet_mask}
+
+    # ${button_result}=    Action Button Or Cancel Button
+    # ...    ${SELECTOR_SETTINGS_NETWORK_NAT_SAVE_BUTTON}
+    # ...    ${SELECTOR_SETTINGS_NETWORK_NAT_CANCEL_BUTTON}
+    # ...    ${save}
+    # Log To Console    ${button_result}

@@ -11,9 +11,6 @@ Resource    automation_locators_id.resource
 Add Alarm Group
     [Arguments]    ${group_name}    ${alarm_device}
 
-    # Go to automation
-    # Go to automation alarm groups
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}
 
@@ -63,8 +60,6 @@ Add Alarm Group
 
 Delete Alarm Group
     [Arguments]    ${group_name}
-    # Go to automation
-    # Go to automation alarm groups
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${group_name}')]
 
@@ -84,9 +79,6 @@ Delete Alarm Group
 
 Edit Alarm Group
     [Arguments]    ${group_name}    ${alarm_device}
-
-    # Go to automation
-    # Go to automation alarm groups
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${group_name}')]
 
@@ -141,8 +133,6 @@ Edit Alarm Group
     Snack-bar Visibility And Content
 
 Print Alarm groups
-    # Go to automation
-    # Go to automation alarm groups
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}

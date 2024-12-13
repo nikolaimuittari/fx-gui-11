@@ -12,9 +12,6 @@ Resource    automation_locators_id.resource
 Add Alarm Device
     [Arguments]    ${device_name}    ${device_type}
 
-    # Go to automation
-    # Go to automation alarm devices
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}
 
@@ -303,8 +300,6 @@ Add Alarm Device
 
 Delete Alarm Device
     [Arguments]    ${device_name}
-    # Go to automation
-    # Go to automation alarm devices
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${device_name}')]
 
@@ -324,9 +319,6 @@ Delete Alarm Device
 
 Edit Alarm Device
     [Arguments]    ${device_name}    ${new_device_name}    ${device_type}
-
-    # Go to automation
-    # Go to automation alarm devices
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${device_name}')]
 
@@ -609,8 +601,6 @@ Edit Alarm Device
     Snack-bar Visibility And Content
 
 Print Alarm Devices
-    # Go to automation
-    # Go to automation alarm devices
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}

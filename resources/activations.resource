@@ -18,17 +18,41 @@ ${selector_production_code_field_modbus}                xpath=//div[@formgroupna
 # TODO: There is no div for weather
 # ${selector_production_code_field_weather}    xpath=
 
-${selector_activations_activate_button_base}            xpath=//div[@formgroupname='main']//button[@class='settings_action_btn ng-star-inserted']
-${selector_activations_activate_button_inu}             xpath=//div[@formgroupname='inuio']//button[@class='settings_action_btn ng-star-inserted']
-${selector_activations_activate_button_ecosmart}        xpath=//div[@formgroupname='ecosmart']//button[@class='settings_action_btn ng-star-inserted']
-${selector_activations_activate_button_tosibox}         xpath=//div[@formgroupname='tosibox']//button[@class='settings_action_btn ng-star-inserted']
-${selector_activations_activate_button_modbus}          xpath=//div[@formgroupname='modbusTCPServer']//button[@class='settings_action_btn ng-star-inserted']
+# ${selector_activations_activate_button_base}            xpath=//div[@formgroupname='main']//button[@class='settings_action_btn ng-star-inserted']
+# ${selector_activations_activate_button_inu}             xpath=//div[@formgroupname='inuio']//button[@class='settings_action_btn ng-star-inserted']
+# ${selector_activations_activate_button_ecosmart}        xpath=//div[@formgroupname='ecosmart']//button[@class='settings_action_btn ng-star-inserted']
+# ${selector_activations_activate_button_tosibox}         xpath=//div[@formgroupname='tosibox']//button[@class='settings_action_btn ng-star-inserted']
+# ${selector_activations_activate_button_modbus}          xpath=//div[@formgroupname='modbusTCPServer']//button[@class='settings_action_btn ng-star-inserted']
 
-${selector_activations_deactivate_button_base}          xpath=//div[@formgroupname='main']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
-${selector_activations_deactivate_button_inu}           xpath=//div[@formgroupname='inuio']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
-${selector_activations_deactivate_button_ecosmart}      xpath=//div[@formgroupname='ecosmart']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
-${selector_activations_deactivate_button_tosibox}       xpath=//div[@formgroupname='tosibox']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
-${selector_activations_deactivate_button_modbus}        xpath=//div[@formgroupname='modbusTCPServer']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
+${selector_activations_activate_button_base}              xpath=//button[@data-qa-id="settings-system-activations-main-activate"]
+${selector_activations_activate_button_inu}               xpath=//button[@data-qa-id="settings-system-activations-inuio-activate"]
+${selector_activations_activate_button_ecosmart}          xpath=//button[@data-qa-id="settings-system-activations-ecosmart-activate"]
+${selector_activations_activate_button_tosibox}           xpath=//button[@data-qa-id="settings-system-activations-tosibox-activate"]
+${selector_activations_activate_button_modbus}            xpath=//button[@data-qa-id="settings-system-activations-modbus-server-activate"]
+
+# ${selector_activations_deactivate_button_base}          xpath=//div[@formgroupname='main']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
+# ${selector_activations_deactivate_button_inu}           xpath=//div[@formgroupname='inuio']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
+# ${selector_activations_deactivate_button_ecosmart}      xpath=//div[@formgroupname='ecosmart']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
+# ${selector_activations_deactivate_button_tosibox}       xpath=//div[@formgroupname='tosibox']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
+# ${selector_activations_deactivate_button_modbus}        xpath=//div[@formgroupname='modbusTCPServer']//button[@class='settings_action_btn settings_action_btn_disabled ng-star-inserted']
+
+${selector_activations_deactivate_button_base}            xpath=//button[@data-qa-id="settings-system-activations-main-remove-activation"]
+${selector_activations_deactivate_button_inu}             xpath=//button[@data-qa-id="settings-system-activations-inuio-remove-activation"]
+${selector_activations_deactivate_button_ecosmart}        xpath=//button[@data-qa-id="settings-system-activations-ecosmart-remove-activation"]
+${selector_activations_deactivate_button_tosibox}         xpath=//button[@data-qa-id="settings-system-activations-tosibox-remove-activation"]
+${selector_activations_deactivate_button_modbus}          xpath=//button[@data-qa-id="settings-system-activations-modbus-server-remove-activation"]
+
+${selector_activations_production_code_weather_energy}         xpath=//mat-icon[@data-qa-id="settings-system-activations-weather-forecast-copy-product-key"]
+
+${selector_activations_activate_weather_forecast}         xpath=//button[@data-qa-id="settings-system-activations-weather-forecaste-enable"]
+${selector_activations_activate_energy_price}             xpath=xpath=//button[@data-qa-id="settings-system-activations-energy-price-enable"]
+
+${selector_activations_weather_forecast_enabled_txt}      xpath=//span[contains(text(),"Weather forecast:")]/following-sibling::div/span[text()="Enabled"]
+${selector_activations_energy_price_forecast_enabled_txt}    xpath=//span[contains(text(),"Energy price:")]/following-sibling::div/span[text()="Enabled"]
+
+${selector_activations_weather_forecast_disabled_txt}      xpath=//span[contains(text(),"Weather forecast:")]/following-sibling::div/span[text()="Disabled"]
+${selector_activations_energy_price_forecast_disabled_txt}    xpath=//span[contains(text(),"Energy price:")]/following-sibling::div/span[text()="Disabled"]
+
 
 ${selector_activations_deactivate_confirm_remove}       xpath=//button[@class='form_btn_save active']
 ${selector_activations_deactivate_confirm_cancel}       xpath=//button[@class='form_btn_cancel']

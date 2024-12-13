@@ -64,53 +64,34 @@ Edit Calendar Event Timetable
         Browser.Click    ${timetable_option_2}
 
         ${time}    ${hour_value}    ${minute_value}=    Generate Random Time
-        # Browser.Click    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT1_TIME_INPUT}
         Browser.Type Text
         ...    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT1_TIME_INPUT}
         ...    ${hour_value}${minute_value}
-        # Keyboard Input    type    ${hour_value}    50ms
-        # Keyboard Input    type    ${minute_value}    50ms
 
         ${time}    ${hour_value}    ${minute_value}=    Generate Random Time
         Browser.Type Text
         ...    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT2_TIME_INPUT}
         ...    ${hour_value}${minute_value}
 
-        # Browser.Click    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT2_TIME_INPUT}
-        # Keyboard Input    type    ${hour_value}    50ms
-        # Keyboard Input    type    ${minute_value}    50ms
-
         ${time}    ${hour_value}    ${minute_value}=    Generate Random Time
         Browser.Type Text
         ...    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT3_TIME_INPUT}
         ...    ${hour_value}${minute_value}
-        # Browser.Click    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT3_TIME_INPUT}
-        # Keyboard Input    type    ${hour_value}    50ms
-        # Keyboard Input    type    ${minute_value}    50ms
 
         ${time}    ${hour_value}    ${minute_value}=    Generate Random Time
         Browser.Type Text
         ...    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT4_TIME_INPUT}
         ...    ${hour_value}${minute_value}
-        # Browser.Click    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT4_TIME_INPUT}
-        # Keyboard Input    type    ${hour_value}    50ms
-        # Keyboard Input    type    ${minute_value}    50ms
 
         ${time}    ${hour_value}    ${minute_value}=    Generate Random Time
         Browser.Type Text
         ...    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT5_TIME_INPUT}
         ...    ${hour_value}${minute_value}
-        # Browser.Click    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT5_TIME_INPUT}
-        # Keyboard Input    type    ${hour_value}    50ms
-        # Keyboard Input    type    ${minute_value}    50ms
 
         ${time}    ${hour_value}    ${minute_value}=    Generate Random Time
         Browser.Type Text
         ...    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT6_TIME_INPUT}
         ...    ${hour_value}${minute_value}
-        # Browser.Click    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT6_TIME_INPUT}
-        # Keyboard Input    type    ${hour_value}    50ms
-        # Keyboard Input    type    ${minute_value}    50ms
 
         ${event_value}=    Evaluate    random.randint(-50, 99)
         Fill Text    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_TIMETABLE_EVENT1_VALUE_INPUT}    ${event_value}
@@ -247,10 +228,6 @@ Edit Calendar Event Validity Period
         Wait For Elements State    ${date_1_year}    visible    timeout=2s
         Browser.Click    ${date_1_year}
 
-        # Check Checkbox    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_INCLUDE_START_DATE_CHECKBOX}
-        # Uncheck Checkbox    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_INCLUDE_START_DATE_CHECKBOX}
-        # Check Checkbox    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_INCLUDE_START_DATE_CHECKBOX}
-
         Wait For Elements State    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_START_DAY_SELECT}    visible    timeout=2s
         Browser.Click    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_START_DAY_SELECT}
         ${date_2_day}=    Set Variable
@@ -273,9 +250,6 @@ Edit Calendar Event Validity Period
         Wait For Elements State    ${date_2_year}    visible    timeout=2s
         Browser.Click    ${date_2_year}
 
-        # Check Checkbox    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_INCLUDE_END_DATE_CHECKBOX}
-        # Uncheck Checkbox    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_INCLUDE_END_DATE_CHECKBOX}
-        # Check Checkbox    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_INCLUDE_END_DATE_CHECKBOX}
     ELSE
         Wait For Elements State    ${validity_period_repeat}    visible    timeout=2s
         Browser.Click    ${validity_period_repeat}
@@ -323,9 +297,6 @@ Add New Calendar Event To Day
     ...    ${bypass_repeat_days_month}
     ...    ${bypass_repeat_day_week}
 
-    # Go to automation
-    # Go to automation calendar
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_CALENDAR_EVENTS_BUTTON}    visible    timeout=2s
     ${calendar_month_year_header}=    Browser.Get Text
     ...    xpath=//div[@class='fc-toolbar-chunk']/h2[@class='fc-toolbar-title']
@@ -359,7 +330,6 @@ Add New Calendar Event To Day
     Wait For Elements State    ${today_cell_xpath}    visible    timeout=2s
     Browser.Click    ${today_cell_xpath}
 
-    # ${SELECTOR_AUTOMATION_CALENDAR_ADD_EVENT_BUTTON}
     ${calendar_event_title_xpath}=    Set Variable
     ...    xpath=//div[@class='toolbar_title' and contains(text(), 'Calendar event')]
     Wait For Elements State    ${calendar_event_title_xpath}    visible    timeout=2s
@@ -399,27 +369,21 @@ Add New Calendar Event To Day
 
 Delete Calendar Event
     [Arguments]    ${point_name}
-    # Go to automation
-    # Go to automation calendar
 
     Wait For Elements State    ${selector_calendar_header}    visible    timeout=5s
     Browser.Click    ${selector_calendar_events_btn}
-    Sleep    ${SLEEP_TIME}
 
     ${full_string}=    Set Variable    xpath=//div[@class='description' and text()="${point_name}"]
 
     Browser.Click    ${full_string}
-    Sleep    ${SLEEP_TIME}
 
     Browser.Click    ${selector_calendar_event_form_remove_btn}
-    Sleep    ${SLEEP_TIME}
 
     ${snack-bar_visible}=    Run Keyword And Return Status
     ...    Wait For Elements State
     ...    xpath=//div[contains(@class, "mat-simple-snackbar")]
     ...    visible
     ...    timeout=5s
-    Sleep    ${SLEEP_TIME}
     IF    ${snack-bar_visible}
         Log To Console    Calendar Event removed. Snack-bar visible
     ELSE

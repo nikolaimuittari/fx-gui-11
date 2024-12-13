@@ -1,7 +1,6 @@
 *** Settings ***
 Library     Browser
 Library     RPA.JavaAccessBridge
-# Library    RPA.Desktop
 Resource    navigate.resource
 Resource    login.resource
 Resource    point_locators.resource
@@ -53,9 +52,6 @@ Add New CP Point
     ...    ${COMPENSATION_LOOKUP}
     ...    ${COMPENSATION_AI}
 
-    # Go to automation
-    # Go to automation control points
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}
 
@@ -88,11 +84,7 @@ Delete CP Point
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
 
-    # Go to automation
-    # Go to automation control points
-
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${POINT_ID_INPUT_VALUE}')]
-    # //td[.//div[@class='point-name ng-star-inserted' and text()=" ${POINT_ID_INPUT_VALUE} "]]
 
     Wait For Elements State    ${compiled_text}    visible    timeout=2s
     Browser.Click    ${compiled_text}
@@ -113,11 +105,7 @@ Duplicate CP Point
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_NEW_NAME}
 
-    # Go to automation
-    # Go to automation control points
-
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${POINT_ID_INPUT_VALUE}')]
-    # ${compiled_text}=    Set Variable    //td[.//div[@class='point-name ng-star-inserted' and text()=" ${POINT_ID_INPUT_VALUE} "]]
 
     Wait For Elements State    ${compiled_text}    visible    timeout=2s
     Browser.Click    ${compiled_text}
@@ -151,8 +139,6 @@ Duplicate CP Point
     Wait For Elements State    ${xpath_variable}    visible    timeout=2s
 
 Print CP Pointlist
-    # Go to automation
-    # Go to automation control points
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}
@@ -172,10 +158,7 @@ Edit CP Point
     ...    ${MAIN_MAIN_MEASUREMENT}
     ...    ${MAIN_OUTDOOR_MEASUREMENT}
 
-    # Go to automation
-    # Go to automation control points
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${POINT_ID_INPUT_VALUE}')]
-    # ${compiled_text}=    Set Variable    //td[.//div[@class='point-name ng-star-inserted' and text()=" ${POINT_ID_INPUT_VALUE} "]]
 
     Wait For Elements State    ${compiled_text}    visible    timeout=2s
     Browser.Click    ${compiled_text}

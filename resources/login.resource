@@ -40,7 +40,7 @@ Check login page is active
     Wait For Elements State    ${selector_username_field}    visible
     Wait For Elements State    ${selector_login_button}    visible
     Wait For Elements State    ${selector_version_info}    visible    timeout=5s
-    ${version_info}=    Get Text    ${selector_version_info}
+    ${version_info}=    Browser.Get Text    ${selector_version_info}
     Log To Console    ${version_info}
 
 Validate logged in
