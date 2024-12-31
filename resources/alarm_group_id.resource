@@ -9,6 +9,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add Alarm Group
+    [Documentation]
+    ...    Creates an Alarm Group object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Groups
+
     [Arguments]    ${group_name}    ${alarm_device}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
@@ -59,6 +63,10 @@ Add Alarm Group
     Snack-bar Visibility And Content
 
 Delete Alarm Group
+    [Documentation]
+    ...    Removes an Alarm Group object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Groups
+
     [Arguments]    ${group_name}
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${group_name}')]
@@ -78,6 +86,10 @@ Delete Alarm Group
     Wait For Elements State    ${compiled_text}    hidden    timeout=2s
 
 Edit Alarm Group
+    [Documentation]
+    ...    Opend Alarm Group object for editing and changes parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Groups
+
     [Arguments]    ${group_name}    ${alarm_device}
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${group_name}')]
@@ -133,6 +145,9 @@ Edit Alarm Group
     Snack-bar Visibility And Content
 
 Print Alarm groups
+    [Documentation]
+    ...    Tries to print Alarm Group object list.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Groups
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}

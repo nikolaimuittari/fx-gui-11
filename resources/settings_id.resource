@@ -168,7 +168,6 @@ Settings System Clock QA-ID
     [Arguments]    ${save}
 
     Go to settings
-    Sleep    ${SLEEP_TIME}
 
     Browser.Click    ${selector_settings_system_btn}
     Browser.Click    ${selector_settings_system_clock_item}

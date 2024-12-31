@@ -10,6 +10,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add New DI Point
+    [Documentation]
+    ...    Creates a new Indication (DI) Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Indications
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_DESCRIPTION_INPUT_VALUE}
@@ -108,6 +112,10 @@ Add New DI Point
     Snack-bar Visibility And Content
 
 Delete DI Point
+    [Documentation]
+    ...    Removes an Indication (DI) Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Indications
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
 
@@ -127,6 +135,10 @@ Delete DI Point
     Wait For Elements State    ${compiled_text}    hidden    timeout=2s
 
 Duplicate DI Point
+    [Documentation]
+    ...    Makes a copy of Indication (DI) Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Indications
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_NEW_NAME}
@@ -165,6 +177,9 @@ Duplicate DI Point
     Wait For Elements State    ${xpath_variable}    visible    timeout=2s
 
 Print DI Pointlist
+    [Documentation]
+    ...    Tries to print a list of Indication (DI) Point objects.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Indications
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}
@@ -174,6 +189,10 @@ Print DI Pointlist
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
 
 Edit DI Point
+    [Documentation]
+    ...    Opens an Indication (DI) Point object for editing and changes parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Indications
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_ID_NEW_VALUE}

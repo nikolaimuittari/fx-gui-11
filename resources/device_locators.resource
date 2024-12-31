@@ -3,6 +3,8 @@ Library     Browser
 Resource    navigate.resource
 Resource    login.resource
 
+### Locators are utilizing 'data-qa-id' attributes where possible ###
+
 
 *** Variables ***
 ${selector_automation_print}                                        xpath=//*[@svgicon="print-icon"]

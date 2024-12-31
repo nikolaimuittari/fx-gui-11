@@ -3,6 +3,7 @@ Library     Browser
 Resource    navigate.resource
 Resource    login.resource
 
+### Locators are utilizing 'data-qa-id' attributes where possible ###
 
 *** Variables ***
 ${selector_history_header}                                              xpath=//div[@class='history_toolbar_title']
@@ -72,12 +73,10 @@ ${selector_group_settings_form_point_settings_save_btn}                 xpath=//
 ${selector_group_settings_form_point_settings_cancel_btn}               xpath=//div[contains(@class, 'button_row')]//button[contains(@class, 'btn') and contains(@class, 'cancel') and text()='Cancel']
 
 ${selector_group_delete_btn}                                            xpath=//button[@class='button cancel' and .//span[text()=' Remove ']]
-# xpath=//span[@class='text ng-star-inserted' and contains(text(), 'Delete group')]
 ${selector_group_edit_btn}                                              xpath=//button[@class='button active']//span[@class='text' and contains(text(), 'Edit')]
 ${selector_group_fullscreen_btn}                                        xpath=//button[@class='button active']//span[@class='text' and contains(text(), 'Fullscreen')]
 
 ${selector_remove_group_form_header}                                    xpath=//button[@class='button cancel' and .//span[text()=' Remove ']]
-# //div[@class='dialog_title' and contains(text(), 'Remove History group')]
 ${selector_remove_group_form_delete_btn}                                xpath=//button[@class='form_btn_save active' and contains(text(), 'Delete')]
 ${selector_remove_group_form_cancel_btn}                                xpath=//button[@class='form_btn_cancel' and @type='button' and contains(text(), 'Cancel')]
 ${selector_remove_group_form_close_btn}                                 xpath=//mat-icon[@class='mat-icon notranslate close_icon mat-icon-no-color' and @role='img' and @svgicon='icon-delete-x']

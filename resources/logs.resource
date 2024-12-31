@@ -11,6 +11,10 @@ Resource    global_variables.resource
 
 *** Keywords ***
 Events Log Features
+    [Documentation]
+    ...    Opens Events Log list and performs search by username and pointname using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]    ${user_name}    ${point_name}
     Go to logs
 
@@ -105,6 +109,10 @@ Events Log Features
     END
 
 Debug Log Features
+    [Documentation]
+    ...    Opens Debug Log list and goes through features.
+    ...    Requires active position at: Main navigation view
+
     Go to logs
 
     Wait for Elements State    ${selector_logs_header}    visible    timeout=10s
@@ -252,6 +260,10 @@ Debug Log Features
     END
 
 Alarm Log Features
+    [Documentation]
+    ...    Opens Alarms Log list and performs search by username and pointname using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]    ${user_name}    ${point_name}
     Go to logs
 

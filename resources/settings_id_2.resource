@@ -19,10 +19,7 @@ Settings Network Email Checkbox
     Go to settings
 
     Browser.Click    ${selector_settings_network_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_network_alarm_item}
-    Sleep    ${SLEEP_TIME}
 
     ${title}=    Run Keyword and Return status
     ...    Wait for Elements State
@@ -129,10 +126,7 @@ Settings Network Email QA-ID
     Go to settings
 
     Browser.Click    ${selector_settings_network_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_network_alarm_item}
-    Sleep    ${SLEEP_TIME}
 
     Wait for Elements State    ${SELECTOR_SETTINGS_NETWORK_EMAIL_SERVER_TITLE_1}    visible    timeout=5s
 
@@ -421,10 +415,7 @@ Settings Network History QA-ID
     Go to settings
 
     Browser.Click    ${selector_settings_network_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_network_history_item}
-    Sleep    ${SLEEP_TIME}
 
     Check Checkbox    ${SELECTOR_SETTINGS_NETWORK_HISTORY_SAVE_HISTORY_CHECKBOX}
     Fill Text    ${SELECTOR_SETTINGS_NETWORK_HISTORY_USERNAME_INPUT}    username
@@ -461,10 +452,7 @@ Settings Network Tosibox QA-ID
     Go to settings
 
     Browser.Click    ${selector_settings_network_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_network_tosibox_item}
-    Sleep    ${SLEEP_TIME}
 
     Fill Text    ${SELECTOR_SETTINGS_NETWORK_TOSIBOX_ACTIVATION_CODE_INPUT}    1234567890abcdef
     Fill Text    ${SELECTOR_SETTINGS_NETWORK_TOSIBOX_NETMAP_ADDRESS_INPUT}    10.10.10.10
@@ -507,10 +495,7 @@ Settings User Users Add QA-ID
     Go to settings
 
     Browser.Click    ${selector_settings_user_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_user_users_item}
-    Sleep    ${SLEEP_TIME}
     Browser.Click    ${SELECTOR_SETTINGS_USER_USERS_ADD_USER_BUTTON}
 
     Fill Text    ${SELECTOR_SETTINGS_USER_USERS_ADD_DIALOG_USER_NAME}    ${username}
@@ -538,10 +523,7 @@ Settings User Users Edit QA-ID
     Go to settings
 
     Browser.Click    ${selector_settings_user_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_user_users_item}
-    Sleep    ${SLEEP_TIME}
 
     ${xpath}=    Catenate    SEPARATOR=    xpath=//td[normalize-space(text())='${username}']
     ${username_is_created}=    Run Keyword And Return Status
@@ -634,10 +616,7 @@ Settings User Usergroup Add QA-ID
     Go to settings
 
     Browser.Click    ${selector_settings_user_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_user_usergroups_item}
-    Sleep    ${SLEEP_TIME}
 
     Wait For Elements State    ${SELECTOR_SETTINGS_USER_USERGROUPS_ADD_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_SETTINGS_USER_USERGROUPS_ADD_BUTTON}
@@ -699,10 +678,7 @@ Settings User Usergroup Edit QA-ID
     Go to settings
 
     Browser.Click    ${selector_settings_user_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_settings_user_usergroups_item}
-    Sleep    ${SLEEP_TIME}
 
     ${xpath}=    Catenate    SEPARATOR=    xpath=//td[normalize-space(text())='${groupname}']
     # Wait For Elements State    ${xpath}    visible    timeout=2s

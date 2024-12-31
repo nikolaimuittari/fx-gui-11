@@ -6,6 +6,9 @@ Resource    point_locators.resource
 Resource    global_variables.resource
 
 
+### IMPORTANT NOTE ###
+### OBSOLETE from version 20.0.63 ###
+
 *** Keywords ***
 Add New Alarm Help
     [Arguments]    ${point_name}

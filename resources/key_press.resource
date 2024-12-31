@@ -10,6 +10,9 @@ Library     Collections
 
 *** Keywords ***
 Press Symbols With Delay
+    [Documentation]
+    ...    Types text with delay between key press
+
     [Arguments]    ${text}    ${delay}
     FOR    ${char}    IN    @{text}
         Browser.Keyboard Key    press    ${char}

@@ -7,9 +7,18 @@ Resource    device_locators.resource
 Resource    global_variables.resource
 Resource    automation_locators_id.resource
 
+### IMPORTANT NOTE: 
+# Currently (version 20.0.84) Module, Modbus device and MBUS Device creation by robot is suspended. 
+# Any creation results FX3000-X booting and possible bootloop.
+# To fix bootloop it is needed to login asap and delete created Modules/Modbus/MBUS devices using GUI
+
 
 *** Keywords ***
 Add New Modbus Device
+    [Documentation]
+    ...    Creates a Modbus Device object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Modbus Devices
+
     [Arguments]
     ...    ${port_number}
     ...    ${address_number}
@@ -23,12 +32,6 @@ Add New Modbus Device
     ...    ${debug}
     ...    ${sendonly}
     ...    ${timeout}
-
-    # ${port_number}=    10
-    # ${address_number}=    63
-
-    # Go to automation
-    # Go to automation modbus devices
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}
@@ -94,9 +97,11 @@ Add New Modbus Device
     Snack-bar Visibility And Content
 
 Delete Modbus Device
+    [Documentation]
+    ...    Removes a Modbus Device object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Modbus Devices
+
     [Arguments]    ${port_number}    ${address_number}
-    # Go to automation
-    # Go to automation modbus devices
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_DELETE_BUTTON}    visible    timeout=2s
     ${full_string}=    Set Variable    xpath=//tr[.//td[text()='${port_number}'] and .//td[text()='${address_number}']]
@@ -111,6 +116,10 @@ Delete Modbus Device
     Snack-bar Visibility And Content
 
 Edit Modbus Device
+    [Documentation]
+    ...    Opens Modbus Device object for editing and changes parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Modbus Devices
+
     [Arguments]
     ...    ${port_number}
     ...    ${address_number}
@@ -126,12 +135,6 @@ Edit Modbus Device
     ...    ${debug}
     ...    ${sendonly}
     ...    ${timeout}
-
-    # ${port_number}=    10
-    # ${address_number}=    63
-
-    # Go to automation
-    # Go to automation modbus devices
 
     ${full_string}=    Set Variable    xpath=//tr[.//td[text()='${port_number}'] and .//td[text()='${address_number}']]
     Wait For Elements State    ${full_string}    visible    timeout=2s
@@ -197,8 +200,9 @@ Edit Modbus Device
     Snack-bar Visibility And Content
 
 Clear Errors Modbus Devices
-    # Go to automation
-    # Go to automation modbus devices
+    [Documentation]
+    ...    Tries to clear errors in Modbus Device page.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Modbus Devices
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_CLEAR_ERRORS_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_CLEAR_ERRORS_BUTTON}

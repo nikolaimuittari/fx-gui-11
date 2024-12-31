@@ -10,6 +10,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add Alarm Device
+    [Documentation]
+    ...    Creates a new Alarm Device object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Devices
+
     [Arguments]    ${device_name}    ${device_type}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
@@ -299,6 +303,10 @@ Add Alarm Device
     Snack-bar Visibility And Content
 
 Delete Alarm Device
+    [Documentation]
+    ...    Removes an Alarm Device object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Devices
+
     [Arguments]    ${device_name}
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${device_name}')]
@@ -318,6 +326,10 @@ Delete Alarm Device
     Wait For Elements State    ${compiled_text}    hidden    timeout=2s
 
 Edit Alarm Device
+    [Documentation]
+    ...    Opens an Alarm Device object for editing and change properties using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Devices
+
     [Arguments]    ${device_name}    ${new_device_name}    ${device_type}
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${device_name}')]
@@ -601,6 +613,9 @@ Edit Alarm Device
     Snack-bar Visibility And Content
 
 Print Alarm Devices
+    [Documentation]
+    ...    Tries to print a list of Alarm Device objects.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Devices
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}

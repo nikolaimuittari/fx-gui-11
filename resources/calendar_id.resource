@@ -17,6 +17,9 @@ ${MONTH_NAMES}      JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC
 
 *** Keywords ***
 Create Current Month And Year String
+    [Documentation]
+    ...    Returns current month and year string value compatible with calendar
+
     ${current_date}=    Get Current Date    result_format=%B %Y
     ${month}    ${year}=    Split String    ${current_date}
     ${upper_month}=    Convert To Uppercase    ${month}
@@ -25,27 +28,43 @@ Create Current Month And Year String
     RETURN    ${current_month_and_year}
 
 Increment Year Related To Current
+    [Documentation]
+    ...    Returns difference between argument year and current
+
     [Arguments]    ${year}
     ${current_year}=    Get Current Date    result_format=%Y
     ${diff}=    Evaluate    ${year} - ${current_year} + 1
     RETURN    ${diff}
 
 Get Date Relative to Today
+    [Documentation]
+    ...    Returns date which offsets current for days in argument 
+
     [Arguments]    ${days_offset}
     ${offset_date}=    Get Current Date    result_format=%Y-%m-%d    time_zone=LOCAL
     ...    increment=${days_offset} days
     RETURN    ${offset_date}
 
 Check Month And Year Equal
+    [Documentation]
+    ...    Checks if argument month and year string value is actual
+
     [Arguments]    ${expected_month_and_year}
     ${current_month_and_year}=    Create Current Month and Year String
     Should Be Equal As Strings    ${current_month_and_year}    ${expected_month_and_year}
 
 Get Todays Date YYYY-MM-DD
+    [Documentation]
+    ...    Returns today's date as a string value 
+
     ${today}=    Get Current Date    result_format=%Y-%m-%d
     RETURN    ${today}
 
 Edit Calendar Event Timetable
+    [Documentation]
+    ...    Opens Calendar Event timetable subform for editing and changes parameters using arguments
+    ...    Requires active position at: Main navigation view -> Automation -> Calendar -> Calendar Event main form (Create / Edit)
+
     [Arguments]    ${event_description}    ${timetable_option}    ${weekday}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_CALENDAR_EDIT_DESCRIPTION_INPUT}    visible    timeout=2s
@@ -152,6 +171,10 @@ Edit Calendar Event Timetable
     END
 
 Edit Calendar Event Validity Period
+    [Documentation]
+    ...    Opens Calendar Event validity period subform for editing and changes parameters using arguments
+    ...    Requires active position at: Main navigation view -> Automation -> Calendar -> Calendar Event main form (Create / Edit)
+
     [Arguments]
     ...    ${event_description}
     ...    ${validity_option}
@@ -286,6 +309,10 @@ Edit Calendar Event Validity Period
     END
 
 Add New Calendar Event To Day
+    [Documentation]
+    ...    Creates Calendar Event in selected day using arguments
+    ...    Requires active position at: Main navigation view -> Automation -> Calendar -> Calendar Event main form (Create / Edit)
+
     [Arguments]
     ...    ${event_description}
     ...    ${timetable_option}
@@ -368,6 +395,10 @@ Add New Calendar Event To Day
     END
 
 Delete Calendar Event
+    [Documentation]
+    ...    Removes Calendar Event using arguments
+    ...    Requires active position at: Main navigation view -> Automation -> Calendar -> selected day
+
     [Arguments]    ${point_name}
 
     Wait For Elements State    ${selector_calendar_header}    visible    timeout=5s

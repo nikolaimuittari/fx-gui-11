@@ -10,6 +10,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add New AI Point
+    [Documentation]
+    ...    Creates a new AI point using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Measurements
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_DESCRIPTION_INPUT_VALUE}
@@ -98,6 +102,10 @@ Add New AI Point
     Snack-bar Visibility And Content
 
 Delete AI Point
+    [Documentation]
+    ...    Removes an AI point using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Measurements
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
 
@@ -118,6 +126,10 @@ Delete AI Point
     Wait For Elements State    ${compiled_text}    hidden    timeout=2s
 
 Duplicate AI Point
+    [Documentation]
+    ...    Makes a copy of an AI point using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Measurements
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_NEW_NAME}
@@ -157,6 +169,9 @@ Duplicate AI Point
     Wait For Elements State    ${xpath_variable}    visible    timeout=2s
 
 Print AI Pointlist
+    [Documentation]
+    ...    Tries to print AI point list.
+    ...    Requires active position at: Main navigation view -> Automation -> Measurements
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}
@@ -166,6 +181,10 @@ Print AI Pointlist
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
 
 Edit AI Point
+    [Documentation]
+    ...    Opens AI point for editing and makes changes to parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Measurements
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_ID_NEW_VALUE}

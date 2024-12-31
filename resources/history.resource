@@ -9,42 +9,37 @@ Resource    global_variables.resource
 
 *** Keywords ***
 History Point
+    [Documentation]
+    ...    Adds point from general list to history points list using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]    ${point_name}
     Go to history
 
     Wait for Elements State    ${selector_history_header}    visible    timeout=2s
-
     Browser.Click    ${selector_history_points_btn}
 
     Wait For Elements State    ${selector_history_pointsettings_form}    visible    timeout=2s
-
     Browser.Click    ${selector_history_pointsettings_form_allpoints_btn}
 
     ${point_name_line}=    Set Variable
     ...    xpath=//div[contains(@class, 'point_container')]//span[text()='${point_name}']
 
     Browser.Click    ${point_name_line}
-
     Browser.Click    ${selector_history_pointsettings_form_allpoints_add_btn}
 
     Wait For Elements State    ${selector_history_pointsettings_form_tolerance_input}    visible    timeout=2s
     Fill Text    ${selector_history_pointsettings_form_tolerance_input}    1.0
-
     Fill Text    ${selector_history_pointsettings_form_sampleCount_input}    15000
-
     Fill Text    ${selector_history_pointsettings_form_sampleTime_input}    15
 
     Select Options By    ${selector_history_pointsettings_form_sampleTime_ddwn}    value    2
-
     Browser.Click    ${selector_history_pointsettings_form_recording_chkbx}
-
     Browser.Click    ${selector_history_pointsettings_form_recording_chkbx}
-
     Browser.Click    ${selector_history_pointsettings_form_energy_ddwn}
     Keyboard Key    press    ArrowDown
     Keyboard Key    press    ArrowDown
     Keyboard Key    press    Enter
-    Sleep    ${SLEEP_TIME}
 
     Browser.Click    ${selector_history_pointsettings_form_histpoints_save_btn}
 
@@ -61,14 +56,9 @@ History Point
     END
 
     Browser.Click    ${selector_history_pointsettings_form_histpoints_close_btn}
-    Sleep    ${SLEEP_TIME}
-
     Browser.Click    ${selector_history_pointsettings_form_histpoints_remove_btn}
-    Sleep    ${SLEEP_TIME}
-
     Wait For Elements State    ${selector_history_pointsettings_form_histpoints_delete_btn}    visible    timeout=2s
     Browser.Click    ${selector_history_pointsettings_form_histpoints_delete_btn}
-    Sleep    ${SLEEP_TIME}
 
     ${snack-bar_visible}=    Run Keyword And Return Status
     ...    Wait For Elements State
@@ -83,6 +73,10 @@ History Point
     END
 
 History Point Add
+    [Documentation]
+    ...    Adds point from general list to history points list using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]
     ...    ${point_name}
     ...    ${tolerance}
@@ -139,20 +133,20 @@ History Point Add
         Select Options By    ${selector_history_pointsettings_form_energy_ddwn}    value    2
     END
 
-    # ${button_result}=    Action Button Or Cancel Button    ${selector_history_pointsettings_form_histpoints_save_btn}    ${selector_history_pointsettings_form_histpoints_cancel_btn}    ${save}
-    # Log To Console    ${button_result}
-
     Wait For Elements State    ${selector_history_pointsettings_form_close_btn}    timeout=2s
     Browser.Click    ${selector_history_pointsettings_form_close_btn}
     Log To Console    Point ${point_name} is ADDED
 
 History Point Remove
+    [Documentation]
+    ...    Removes history point from history points list using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]
     ...    ${point_name}
     ...    ${save}
 
     Go to history
-    Sleep    ${SLEEP_TIME}
 
     Wait for Elements State    ${selector_history_header}    visible    timeout=2s
     Browser.Click    ${selector_history_points_btn}
@@ -174,6 +168,10 @@ History Point Remove
     Log To Console    Point ${point_name} is REMOVED
 
 History Point Edit
+    [Documentation]
+    ...    Opens point from history points list edit and changes parameters using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]
     ...    ${point_name}
     ...    ${tolerance}
@@ -210,7 +208,6 @@ History Point Edit
 
     IF    ${recording} == 1
         Browser.Click    ${selector_history_pointsettings_form_recording_chkbx}
-        Sleep    ${SLEEP_TIME}
     END
 
     IF    ${energy} == 1    # No
@@ -226,6 +223,10 @@ History Point Edit
     Log To Console    Point ${point_name} is EDITED
 
 History Group Add
+    [Documentation]
+    ...    Adds history group using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]
     ...    ${group_name}
     ...    ${timespan}
@@ -267,7 +268,6 @@ History Group Add
     ${local_selector_group_settings_form_point_settings_minus_btn}=    Set Variable    xpath=//div[@class="point_name" and span/text()="${point_name}"]/following-sibling::div[@class="button_container"]//mat-icon[@svgicon="remove-line-icon"]
     ${local_selector_group_settings_form_point_settings_edit_btn}=    Set Variable    xpath=//div[@class="point_name" and span/text()="${point_name}"]/following-sibling::div[@class="button_container"]//mat-icon[@svgicon="icon-automation-edit"]
 
-
     Wait For Elements State    ${local_selector_group_settings_form_point_settings_plus_btn}    visible    timeout=2s
     Browser.Click    ${local_selector_group_settings_form_point_settings_plus_btn}
 
@@ -284,6 +284,10 @@ History Group Add
     Log To Console    Group ${group_name} is ADDED
 
 History Group Remove
+    [Documentation]
+    ...    Removes history group using arguments.
+    ...    Requires active position at: Main navigation view
+
     [Arguments]
     ...    ${group_name}
     ...    ${save}

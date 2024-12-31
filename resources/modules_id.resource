@@ -8,6 +8,11 @@ Resource    global_variables.resource
 Resource    automation_locators_id.resource
 Resource    key_press.resource
 
+### IMPORTANT NOTE: 
+# Currently (version 20.0.84) Module, Modbus device and MBUS Device creation by robot is suspended. 
+# Any creation results FX3000-X booting and possible bootloop.
+# To fix bootloop it is needed to login asap and delete created Modules/Modbus/MBUS devices using GUI
+
 
 *** Keywords ***
 Add New Module Device
@@ -53,9 +58,6 @@ Add New Module Device
     ...    xpath=//mat-option[@data-qa-id="automation-module-edit-port-option${port_option}"]
     Wait For Elements State    ${port_option_xpath}    visible    timeout=2s
     Browser.Click    ${port_option_xpath}
-    # Keyboard Key    press    ArrowDown
-    # Keyboard Key    press    ArrowDown
-    # Keyboard Key    press    Enter
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_EDIT_CONNECTION_ADDRESS_SELECT}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_MODULE_EDIT_CONNECTION_ADDRESS_SELECT}
@@ -64,14 +66,9 @@ Add New Module Device
     ...    xpath=//mat-option[@data-qa-id="automation-module-edit-address-option${address_number}"]
     Wait For Elements State    ${address_option_xpath}    visible    timeout=2s
     Browser.Click    ${address_option_xpath}
-    # Keyboard Key    press    ArrowDown
-    # Keyboard Key    press    Enter
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_EDIT_MODULE_TYPE_SELECT}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_MODULE_EDIT_MODULE_TYPE_SELECT}
-    # Keyboard Key    press    ArrowDown
-    # Keyboard Key    press    ArrowDown
-    # Keyboard Key    press    Enter
 
     # Module type
     #
@@ -219,8 +216,6 @@ Add New Module Device
     Snack-bar Visibility And Content
 
 Find Module Devices
-    # Go to automation
-    # Go to automation modules
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_FIND_MODULES_BUTTON}
     Browser.Click    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_FIND_MODULES_BUTTON}
@@ -242,12 +237,9 @@ Find Module Devices
 Connections Module Devices
     [Arguments]    ${port}    ${module}
 
-    # Go to automation
-    # Go to automation modules
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_CONNECTIONS_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_CONNECTIONS_BUTTON}
 
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_DETAILS_DIALOG_PRINT_BUTTON}    visible    timeout=2s
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_DETAILS_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_MODULE_DETAILS_DIALOG_CANCEL_BUTTON}
 
@@ -276,8 +268,6 @@ Connections Module Devices
     Keyboard Key    press    Escape
 
 Clear Errors Module Devices
-    # Go to automation
-    # Go to automation modules
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_CLEAR_ERRORS_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_CLEAR_ERRORS_BUTTON}
@@ -285,8 +275,6 @@ Clear Errors Module Devices
 
 Update Software Module Devices
     [Arguments]    ${port_number}    ${address_number}    ${version_number}
-    # Go to automation
-    # Go to automation modules
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_TOOLBAR_CONNECTIONS_BUTTON}    visible    timeout=2s
 
@@ -304,8 +292,6 @@ Update Software Module Devices
     ${modified_string}=    Replace CR LF with Pipe    ${status_text}
     Log To Console    status: ${modified_string}
 
-    # ${full_string}=    Set Variable    xpath=//tr[.//td[text()='${port_number}'] and .//td[text()='${address_number}']]
-
     ${table_line_visible}=    Run Keyword And Return Status
     ...    Wait For Elements State
     ...    ${full_string}
@@ -318,19 +304,7 @@ Update Software Module Devices
     Log To Console    row text: ${modified_string}
 
     ${table_xpath}=    Set Variable    xpath=//table[@class='automation-table striped ng-star-inserted']
-    # //div[@class='automation-table-frame']
-    # xpath=//table[@class='automation-table striped ng-star-inserted']
-    # ${row_1_cell_1} =    Get Table Cell Element    ${table_xpath}    0    1
-    # ${row_1_cell_1_text} =    Browser.Get Text    ${row_1_cell_1}
-    # ${idx1}=    Get Table Row Index    ${table_xpath}
-    # ${idx2}=    Get Table Row Index    ${table_xpath} >> "TC16"
-    # ${idx3}=    Get Table Row Index    ${table_xpath} >> "1"
-    # ${idx}=    Get Table Cell Index    ${table_xpath} >> "TC16"
-    # Log To Console    Row 1 Cell 1 text: ${row_1_cell_1_text}
-    # Log To Console    AO : ${idx1}
-    # Log To Console    TC16 : ${idx2}
-    # Log To Console    AO : ${idx3}
-    # Log To Console    5: ${idx}
+
     Wait For Elements State    ${version_cell}    visible    timeout=2s
     Browser.Click    ${version_cell}
     Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_VERSION_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
@@ -373,12 +347,9 @@ Update Software Module Devices
 
 Delete Module Device
     [Arguments]    ${port_number}    ${address_number}
-    # Go to automation
-    # Go to automation modules
 
     Wait For Elements State    ${selector_module_create_form_port_header}    visible    timeout=2s
 
-    # ${full_string}=    Set Variable    xpath=//table[@class='automation-table striped ng-star-inserted']/tbody/tr[td[1]='${port_number}' and td[2]='${address_number}']
     ${full_string}=    Set Variable    xpath=//tr[.//td[text()='${port_number}'] and .//td[text()='${address_number}']]
 
     ${module_exists}=    Run Keyword And Return Status
@@ -398,23 +369,3 @@ Delete Module Device
     ELSE
         Log To Console    Module Device does not in the table. Cannot remove.
     END
-
-    # Browser.Click    ${full_string}
-    # Browser.Click    ${selector_devices_module_remove_btn}
-
-    # Wait For Elements State    ${selector_automation_delete_form}    visible    timeout=2s
-    # Browser.Click    ${selector_automation_delete_form_delete_button}
-
-    # Snack-bar Visibility And Content
-
-    # ${snack-bar_visible}=    Run Keyword And Return Status
-    # ...    Wait For Elements State
-    # ...    xpath=//div[contains(@class, "mat-simple-snackbar")]
-    # ...    visible
-    # ...    timeout=5s
-    # Sleep    ${SLEEP_TIME}
-    # IF    ${snack-bar_visible}
-    #    Log To Console    Module Device removed. Snack-bar visible
-    # ELSE
-    #    Log To Console    Module Device removed. Snack-bar not visible
-    # END

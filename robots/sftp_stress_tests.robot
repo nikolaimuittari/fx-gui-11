@@ -64,7 +64,7 @@ Test SFTP Communication
     ...    ${username}
     ...    ${password}
     ...    5
-    ...    c:\\QA\\robot_tmp\\Default
+    ...    c:\\QA\\robot_tmp\\1MB
     ...    /tmp
 
     Upload With Lag By Clumsy

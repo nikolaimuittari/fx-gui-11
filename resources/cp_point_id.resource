@@ -10,6 +10,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add New CP Point
+    [Documentation]
+    ...    Creates Control Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Control points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_DESCRIPTION_INPUT_VALUE}
@@ -81,6 +85,10 @@ Add New CP Point
     Snack-bar Visibility And Content
 
 Delete CP Point
+    [Documentation]
+    ...    Removes Control Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Control points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
 
@@ -101,6 +109,10 @@ Delete CP Point
     Wait For Elements State    ${compiled_text}    hidden    timeout=2s
 
 Duplicate CP Point
+    [Documentation]
+    ...    Makes a copy of Control Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Control points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_NEW_NAME}
@@ -139,6 +151,9 @@ Duplicate CP Point
     Wait For Elements State    ${xpath_variable}    visible    timeout=2s
 
 Print CP Pointlist
+    [Documentation]
+    ...    Tries to print Control Point objects list.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Control points
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}
@@ -148,6 +163,10 @@ Print CP Pointlist
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
 
 Edit CP Point
+    [Documentation]
+    ...    Opens Control Point object for editing and changes parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> Control points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_ID_NEW_VALUE}

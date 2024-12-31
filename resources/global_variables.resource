@@ -1,5 +1,4 @@
 *** Settings ***
-# Library    RPA.Browser.Selenium
 Library     Browser
 Library     RPA.HTTP
 Library     RPA.DocumentAI.Nanonets
@@ -10,12 +9,10 @@ Library     DateTime
 Library     Process
 Library     OperatingSystem
 Library     SeleniumLibrary
-# Library     RPA.JavaAccessBridge
 Resource    automation_locators_id.resource
 
 
 *** Variables ***
-${SLEEP_TIME}       0.1s
 ${temp_folder}      c:\\QA\\robot_tmp\\
 ${min_range}        0
 ${max_range}        999
@@ -26,6 +23,7 @@ ${snack_bar_text_xpath}    xpath=//mat-snack-bar-container//div[@class="item lef
 *** Keywords ***
 Log Texts FromElementsWithAttribute
     [Arguments]    ${attribute_prefix}
+    
     @{elements}=    Browser.Get Elements    //*[contains(@data-qa-id, '${attribute_prefix}')]
     ${elements_count}=    Browser.Get Element Count    //*[contains(@data-qa-id, '${attribute_prefix}')]
     Log To Console    Elements in table: ${elements_count}
@@ -36,11 +34,14 @@ Log Texts FromElementsWithAttribute
 
 Log All Module Tables
     [Arguments]    ${attribute_prefix}
+    
     # Log Texts FromElementsWithAttribute    automation-module-view-dialog-table6-row
     ${element_xpath}=    Set Variable    xpath=//*[contains(@data-qa-id, '${attribute_prefix}')]
 
 Module Selector
-    [Documentation]    Fills arguments data according to module selector type. Old model with separate port-module-point fields. New model with gray field and module list
+    [Documentation]    
+    ...    Fills arguments data according to module selector type. Old model with separate port-module-point fields. New model with gray field and module list
+
     [Arguments]    ${port}    ${module}    ${point}
     ${new_model}=    Run Keyword And Return Status
     ...    Wait For Elements State
@@ -115,18 +116,22 @@ Module Selector
 
 Display System Message
     [Arguments]    ${message_text}    ${visibility_time}
+    
     # Run Process    cmd.exe    /c "start /B msg * ${message_text} & timeout /T ${visibility_time} /nobreak > nul & taskkill /FI 'WindowTitle eq Message' /F"
     SeleniumLibrary.Execute JavaScript
     ...    window.alert('${message_text}'); setTimeout(function(){ window.close(); }, ${visibility_time}*1000)
 
 Post-Test Action
-    [Documentation]    Display system message for 5 seconds and close it automatically
+    [Documentation]    
+    ...    Display system message for 5 seconds and close it automatically
+    
     Run Process
     ...    cmd.exe
     ...    /c "start /B msg * Test execution completed & timeout /T 5 /nobreak > nul & taskkill /FI 'WindowTitle eq Message' /F"
 
 Generate Random Point Name
     [Arguments]    ${first_part}    ${last_part}    ${delimiter}
+    
     # ${random_string} =    Evaluate    ''.join(random.choices(string.ascii_uppercase + string.digits, k=random.randint(1, 16)))
     ${random_string}=    Evaluate    ''.join(random.choices(string.ascii_uppercase, k=8))
     ${third_part}=    Evaluate    "{:03d}".format(random.randint(0, 999))
@@ -135,6 +140,7 @@ Generate Random Point Name
     RETURN    ${final_string}
 
 Generate Random Time
+    
     ${random_hour}=    Evaluate    "{:02d}".format(random.randint(0, ${hour} - 1))
     ${random_minute}=    Evaluate    "{:02d}".format(random.randint(0, ${minute} - 1))
     ${time}=    Set Variable    ${random_hour}:${random_minute}
@@ -224,7 +230,9 @@ Generate Random Web Address
     RETURN    ${address}
 
 Split Date String
-    [Documentation]    Split argument date in format    2024-05-31 into year, month, day variables with removing leading zeroes
+    [Documentation]    
+    ...    Split argument date in format    2024-05-31 into year, month, day variables with removing leading zeroes
+    
     [Arguments]    ${date_string}
     ${year}    ${month}    ${day}=    Split String    ${date_string}    -
     IF    "${month}".startswith("0")
@@ -245,24 +253,18 @@ Todays Date YYYY-MM-DD
 
 Replace CR LF with Pipe
     [Arguments]    ${input_string}
-    # @{lines} =    Split To Lines    ${manylines}
-    # ${str.strip()}
-    # {time_stamp}'.replace(' ','_')
-    # ${output_string}=    Replace String    ${input_string}    /\r/\n    /|
-    # ${output_string}=    Replace String    ${output_string}    ' '    _
-    # ${output_string}=    Replace String    ${output_string}    3    X
 
-    # ${output_string}=    Split To Lines    ${input_string}
-    # ${output_string}=    Evaluate    ${output_string.strip()}
     ${output_string}=    Replace String    ${input_string}    ' '    '_'
     ${output_string}=    Replace String    ${output_string}    \r    '-'
     RETURN    ${output_string}
 
 Set Zoom Level
     [Arguments]    ${zoom_level}
+    
     Evaluate JavaScript    locator=none    document.body.style.zoom='${zoom_level}';
 
 Wait Until Browser Is Open
+    
     Wait Until Keyword Succeeds    30s    1s    Browser Is Open
 
 Browser Is Open
@@ -271,16 +273,19 @@ Browser Is Open
 
 Get Text From XPath
     [Arguments]    ${xpath}
+    
     ${text}=    Browser.Get Text    ${xpath}
     RETURN    ${text}
 
 Console Text From Path
     [Arguments]    ${description}    ${xpath}
+    
     ${text}=    Browser.Get Text    ${xpath}
     Log To Console    ${description} : ${text}
 
 Check Xpath Visible
     [Arguments]    ${xpath}
+    
     ${xpath_visible}=    Run Keyword And Return Status    Wait For Elements State    ${xpath}    visible    timeout=2s
     IF    ${xpath_visible}
         ${visibility}=    Set Variable    ${True}
@@ -317,10 +322,9 @@ Action Button Or Cancel Button
     RETURN    ${return text}
 
 Snack-bar Visibility And Content
+
     ${snack-bar_visible}=    Check Xpath visible    xpath=//span[@class='mdc-button__label']
-    # ${snack-bar_button_visible}=    Check Xpath Visible    xpath=//button[contains(@class, 'mat-button')]
     Log To Console    Snack-bar: ${snack-bar_visible}
-    # Log To Console    Snack-bar button: ${snack-bar_button_visible}
 
     IF    ${snack-bar_visible}
         ${snack-bar_text_1}=   Get Text From Xpath    xpath=//span[@class='mdc-button__label']

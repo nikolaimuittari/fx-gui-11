@@ -10,6 +10,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add New Freeze Protect
+    [Documentation]
+    ...    Creates a new Freeze Protect Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Freeze protect
+
     [Arguments]
     ...    ${point_name}
     ...    ${point_description}
@@ -27,9 +31,6 @@ Add New Freeze Protect
     ...    ${freezeAck}
     ...    ${ackByButton}
 
-    # Go to automation
-    # Go to automation freeze protectors
-
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}
     Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_CANCEL_BUTTON}    visible    timeout=2s
@@ -41,15 +42,6 @@ Add New Freeze Protect
     Fill Text    ${SELECTOR_AUTOMATION_FREEZE_EDIT_ACCESS_LEVEL_VIEW_INPUT}    0
     Fill Text    ${SELECTOR_AUTOMATION_FREEZE_EDIT_ACCESS_LEVEL_MANUAL_INPUT}    0
     Fill Text    ${SELECTOR_AUTOMATION_FREEZE_EDIT_ACCESS_LEVEL_PROGRAMMING_INPUT}    0
-
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    ${port_number}
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    ${module_number}
-    # Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_DETAILS_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
-    # Browser.Click    ${SELECTOR_AUTOMATION_MODULE_DETAILS_DIALOG_CANCEL_BUTTON}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    ${point_number}
 
     Module Selector    ${port_number}    ${module_number}    ${point_number}
 
@@ -73,9 +65,11 @@ Add New Freeze Protect
     Snack-bar Visibility And Content
 
 Delete Freeze Protect
+    [Documentation]
+    ...    Creates a new Freeze Protect Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Freeze protect
+
     [Arguments]    ${point_name}
-    # Go to automation
-    # Go to automation freeze protectors
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_DELETE_BUTTON}    visible    timeout=2s
     ${full_string}=    Set Variable    xpath=//td[contains(., '${point_name}')]
@@ -90,9 +84,11 @@ Delete Freeze Protect
     Wait For Elements State    ${full_string}    hidden    timeout=2s
 
 Duplicate Freeze Protect
+    [Documentation]
+    ...    Makes a copy of Freeze Protect Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Freeze protect
+
     [Arguments]    ${point_name}    ${new_point_name}
-    # Go to automation
-    # Go to automation freeze protectors
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_DUPLICATE_BUTTON}    visible    timeout=2s
     ${full_string}=    Set Variable    xpath=//td[contains(., '${point_name}')]
@@ -110,8 +106,9 @@ Duplicate Freeze Protect
     Wait For Elements State    ${full_string}    visible    timeout=2s
 
 Print Freeze Pointlist
-    # Go to automation
-    # Go to automation freeze protectors
+    [Documentation]
+    ...    Tries to print Freeze Protect Point object list.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Freeze protect
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}
@@ -121,6 +118,10 @@ Print Freeze Pointlist
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
 
 Edit Freeze Protect
+    [Documentation]
+    ...    Opens Freeze Protect Point object for editing and change parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Devices -> Freeze protect
+
     [Arguments]
     ...    ${point_name}
     ...    ${new_point_name}
@@ -158,15 +159,6 @@ Edit Freeze Protect
     Fill Text    ${SELECTOR_AUTOMATION_FREEZE_EDIT_ACCESS_LEVEL_VIEW_INPUT}    0
     Fill Text    ${SELECTOR_AUTOMATION_FREEZE_EDIT_ACCESS_LEVEL_MANUAL_INPUT}    0
     Fill Text    ${SELECTOR_AUTOMATION_FREEZE_EDIT_ACCESS_LEVEL_PROGRAMMING_INPUT}    0
-
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    ${port_number}
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    ${module_number}
-    # Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_MODULE_DETAILS_DIALOG_CANCEL_BUTTON}    visible    timeout=2s
-    # Browser.Click    ${SELECTOR_AUTOMATION_MODULE_DETAILS_DIALOG_CANCEL_BUTTON}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    ${point_number}
 
     Module Selector    ${port_number}    ${module_number}    ${point_number}
 

@@ -10,6 +10,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add New AO Point
+    [Documentation]
+    ...    Creates a new AO Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> AO points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_DESCRIPTION_INPUT_VALUE}
@@ -120,6 +124,10 @@ Add New AO Point
     Snack-bar Visibility And Content
 
 Delete AO Point
+    [Documentation]
+    ...    Removes a new AO Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> AO points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
 
@@ -140,6 +148,10 @@ Delete AO Point
     Wait For Elements State    ${compiled_text}    hidden    timeout=2s
 
 Duplicate AO Point
+    [Documentation]
+    ...    Makes a copy of AO Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> AO points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_NEW_NAME}
@@ -179,6 +191,9 @@ Duplicate AO Point
     Wait For Elements State    ${xpath_variable}    visible    timeout=2s
 
 Print AO Pointlist
+    [Documentation]
+    ...    Tries to print a list of AO points.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> AO points
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}
@@ -188,6 +203,10 @@ Print AO Pointlist
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_PRINT_BUTTON}    visible    timeout=2s
 
 Edit AO Point
+    [Documentation]
+    ...    Opens  AO Point object for editing and changes parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Points -> AO points
+
     [Arguments]
     ...    ${POINT_ID_INPUT_VALUE}
     ...    ${POINT_ID_NEW_VALUE}

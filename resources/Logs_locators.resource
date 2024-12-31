@@ -3,6 +3,7 @@ Library     Browser
 Resource    navigate.resource
 Resource    login.resource
 
+### Locators are utilizing 'data-qa-id' attributes where possible ###
 
 *** Variables ***
 ${temp_folder}                                      c:\\QA\\robot_tmp\\

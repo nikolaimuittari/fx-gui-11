@@ -4,6 +4,7 @@ Resource    navigate.resource
 Resource    login.resource
 Resource    global_variables.resource
 
+### Locators are utilizing 'data-qa-id' attributes where possible ###
 
 *** Variables ***
 ####

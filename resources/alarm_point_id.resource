@@ -9,6 +9,10 @@ Resource    automation_locators_id.resource
 
 *** Keywords ***
 Add New Alarm Point
+    [Documentation]
+    ...    Creates a new Alarm Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Points
+
     [Arguments]    ${point_name}    ${alarm_type}    ${port}    ${module}    ${point}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_TOOLBAR_ADD_NEW_BUTTON}    visible    timeout=2s
@@ -318,9 +322,11 @@ Add New Alarm Point
     Snack-bar Visibility And Content
 
 Delete Alarm Point
+    [Documentation]
+    ...    Removes an Alarm Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Points
+
     [Arguments]    ${point_name}
-    # Go to automation
-    # Go to automation alarm points
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${point_name}')]
 
@@ -339,9 +345,11 @@ Delete Alarm Point
     Wait For Elements State    ${compiled_text}    hidden    timeout=2s
 
 Edit Alarm Point
+    [Documentation]
+    ...    Opens Alarm Point object for editing and changes parameters using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Points
+
     [Arguments]    ${point_name}    ${new_point_name}    ${alarm_type}    ${port}    ${module}    ${point}
-    # Go to automation
-    # Go to automation alarm points
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${point_name}')]
 
@@ -365,8 +373,6 @@ Edit Alarm Point
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_GLOBAL_BUTTON}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}    visible    timeout=2s
-    # ${rnd_substation}=    Generate Random String    3    [UPPER]
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}    VAK_${rnd_substation}
 
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_GLOBAL_SUBSTATION_SELECT}
     ${substation_option_2}=    Set Variable
@@ -386,17 +392,6 @@ Edit Alarm Point
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_TYPE_LOCAL_BUTTON}
 
     Module Selector    ${port}    ${module}    ${point}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_PORT_INPUT}    ${port}
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MODULE_NUMBER_INPUT}    ${module}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}    visible    timeout=2s
-    # ${SELECTOR_AUTOMATION_POINT_EDIT_LINK_ICON}
-
-    # Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    visible    timeout=2s
-    # Fill Text    ${SELECTOR_AUTOMATION_POINT_EDIT_MOD_POINT_INPUT}    ${point}
 
     Wait For Elements State    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}    visible    timeout=2s
     Browser.Click    ${SELECTOR_AUTOMATION_POINT_EDIT_STATE_TEXT_SELECT}
@@ -611,9 +606,11 @@ Edit Alarm Point
     Snack-bar Visibility And Content
 
 Duplicate Alarm Point
+    [Documentation]
+    ...    Makes a copy of Alarm Point object using arguments.
+    ...    Requires active position at: Main navigation view -> Automation -> Alarms -> Points
+
     [Arguments]    ${point_name}
-    # Go to automation
-    # Go to automation alarm points
 
     ${compiled_text}=    Set Variable    xpath=//td[contains(., '${point_name}')]
 
